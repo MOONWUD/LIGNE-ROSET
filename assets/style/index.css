@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap");
 /*===== 변수  */
 /*===== nav  */
 nav .navWrapper {
@@ -92,7 +93,7 @@ header a .logo img {
   border-bottom: 4px solid #dddddd;
 }
 #fullpage .main .mainGrid .mainGrid_contents .contentsTop .subTitle {
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 25px;
   font-weight: 800;
   color: #222222;
@@ -109,7 +110,7 @@ header a .logo img {
   flex-direction: column;
   justify-content: center;
   gap: 30px;
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 20px;
   font-weight: 800;
   color: #222222;
@@ -141,7 +142,7 @@ header a .logo img {
   place-items: center;
 }
 #fullpage .togo .contents .title {
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 40px;
   font-weight: 800;
   color: #222222;
@@ -185,7 +186,7 @@ header a .logo img {
   margin-bottom: 80px;
 }
 #fullpage .products .textWrapper .title {
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 40px;
   font-weight: 800;
   color: #222222;
@@ -250,7 +251,7 @@ header a .logo img {
   width: 4600px;
 }
 #fullpage .products .slideContainer .slide.left {
-  animation: left 40s linear infinite;
+  animation: left 55s linear infinite;
 }
 @keyframes left {
   0% {
@@ -261,7 +262,7 @@ header a .logo img {
   }
 }
 #fullpage .products .slideContainer .slide.right {
-  animation: right 40s linear infinite;
+  animation: right 55s linear infinite;
 }
 @keyframes right {
   0% {
@@ -296,7 +297,7 @@ header a .logo img {
   margin-bottom: 40px;
 }
 #fullpage .philosophy .centerItem .textWrapper .title {
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 40px;
   font-weight: 800;
   color: #222222;
@@ -313,11 +314,11 @@ header a .logo img {
   margin-bottom: 100px;
 }
 #fullpage .philosophy .centerItem .btn a {
-  width: 200px;
+  width: 300px;
   height: 50px;
   padding: 15px;
   border-radius: 50px;
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 15px;
   font-weight: 800;
   color: #F6F6F6;
@@ -326,8 +327,8 @@ header a .logo img {
   display: block;
   margin: 0 auto;
   box-shadow: 4px 4px 4px rgba(119, 119, 119, 0.1);
+  transition: 0.3s;
   border: 1px solid #222222;
-  transition: 0.2s;
 }
 #fullpage .philosophy .centerItem .btn:hover a {
   background-color: transparent;
@@ -358,13 +359,13 @@ header a .logo img {
   margin: 0;
 }
 #fullpage .philosophy .productList .card .textWrapper .textWrapper {
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 13px;
   font-weight: 800;
   color: #222222;
 }
 #fullpage .philosophy .productList .card .textWrapper .productName {
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 13px;
   font-weight: 300;
   color: #222222;
@@ -433,7 +434,7 @@ header a .logo img {
   margin-bottom: 40px;
 }
 #fullpage .michelDucaroy .textWrapper .title {
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 40px;
   font-weight: 800;
   color: #222222;
@@ -450,11 +451,11 @@ header a .logo img {
   margin-bottom: 100px;
 }
 #fullpage .michelDucaroy .btn a {
-  width: 200px;
+  width: 300px;
   height: 50px;
   padding: 15px;
   border-radius: 50px;
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 15px;
   font-weight: 800;
   color: #F6F6F6;
@@ -463,8 +464,8 @@ header a .logo img {
   display: block;
   margin: 0 auto;
   box-shadow: 4px 4px 4px rgba(119, 119, 119, 0.1);
+  transition: 0.3s;
   border: 1px solid #222222;
-  transition: 0.2s;
 }
 #fullpage .michelDucaroy .btn:hover a {
   background-color: transparent;
@@ -496,13 +497,13 @@ header a .logo img {
   margin: 0;
 }
 #fullpage .michelDucaroy .productList .card .textWrapper .textWrapper {
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 13px;
   font-weight: 800;
   color: #222222;
 }
 #fullpage .michelDucaroy .productList .card .textWrapper .productName {
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 13px;
   font-weight: 300;
   color: #222222;
@@ -524,7 +525,7 @@ header a .logo img {
   margin-bottom: 40px;
 }
 #fullpage .ourDesigners .centerItem .textWrapper .title {
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 40px;
   font-weight: 800;
   color: #222222;
@@ -541,11 +542,11 @@ header a .logo img {
   margin-bottom: 100px;
 }
 #fullpage .ourDesigners .centerItem .btn a {
-  width: 200px;
+  width: 300px;
   height: 50px;
   padding: 15px;
   border-radius: 50px;
-  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 15px;
   font-weight: 800;
   color: #F6F6F6;
@@ -554,8 +555,8 @@ header a .logo img {
   display: block;
   margin: 0 auto;
   box-shadow: 4px 4px 4px rgba(119, 119, 119, 0.1);
+  transition: 0.3s;
   border: 1px solid #222222;
-  transition: 0.2s;
 }
 #fullpage .ourDesigners .centerItem .btn:hover a {
   background-color: transparent;
@@ -586,23 +587,93 @@ header a .logo img {
 }
 #fullpage .ourDesigners .designersList.left1 {
   left: 0;
-  animation: top 50s linear infinite;
+  animation: top 55s linear infinite;
 }
 #fullpage .ourDesigners .designersList.left2 {
   left: 300px;
-  animation: botton 50s linear infinite;
+  animation: botton 55s linear infinite;
 }
 #fullpage .ourDesigners .designersList.right1 {
   right: 0;
-  animation: botton 50s linear infinite;
+  animation: botton 55s linear infinite;
 }
 #fullpage .ourDesigners .designersList.right2 {
   right: 300px;
-  animation: top 50s linear infinite;
+  animation: top 55s linear infinite;
 }
 #fullpage .ourDesigners .designersList li {
   height: 290px;
 }
 #fullpage .ourDesigners .designersList li img {
   height: 100%;
+}
+#fullpage .footer {
+  width: 100%;
+  height: 100%;
+  padding: 200px 0 30px;
+  text-align: center;
+  background-color: #dddddd;
+}
+#fullpage .footer .title {
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 50px;
+  font-weight: 800;
+  color: #222222;
+  margin-bottom: 20px;
+}
+#fullpage .footer .text {
+  font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 18px;
+  font-weight: 400;
+  color: #222222;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+#fullpage .footer .btnWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 80px;
+}
+#fullpage .footer .btnWrapper .btn a {
+  width: 300px;
+  height: 50px;
+  padding: 15px;
+  border-radius: 50px;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 15px;
+  font-weight: 800;
+  color: #F6F6F6;
+  background-color: #F6F6F6;
+  color: #222222;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 4px 4px 4px rgba(119, 119, 119, 0.1);
+  transition: 0.3s;
+  border: 1px solid #F6F6F6;
+}
+#fullpage .footer .btnWrapper .btn a:hover {
+  background-color: transparent;
+}
+#fullpage .footer .footerBotton .logo {
+  margin: 0 auto 30px;
+  width: 150px;
+}
+#fullpage .footer .footerBotton .logo img {
+  width: 100%;
+}
+#fullpage .footer .footerBotton .linkWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+#fullpage .footer .footerBotton .linkWrapper li a {
+  transition: 0.3s;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 15px;
+  font-weight: 500;
+  color: #777777;
+}
+#fullpage .footer .footerBotton .linkWrapper li a:hover {
+  color: #222222;
 }/*# sourceMappingURL=index.css.map */
