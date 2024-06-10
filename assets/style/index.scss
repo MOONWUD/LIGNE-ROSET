@@ -22,7 +22,7 @@ $breakpoint-desktop: 1390px;
 }
 
 
-/*===== 변수  */ 
+/*===== 변수  */
 $mainColorW: #F6F6F6;
 $maniColorB: #777777;
 $mainTextColor: #222222;
@@ -40,24 +40,29 @@ $bgColor: #dddddd;
   font-size: $size;
   font-weight: $weight;
   color: $mainTextColor;
+  line-height: 1.5;
 }
 
-@mixin btn ($bgColor: $mainColorB, $fontColor: $maniColorW) {
+@mixin btn ($btnBgColor: $mainColorB, $fontColor: $maniColorW) {
   max-width: 310px;
   min-width: 200px;
   height: 50px;
   padding: 15px;
   border-radius: 50px;
-  background-color: $bgColor;
   @include enTitle(15px, 800, $mainColorW);
+  background-color: $btnBgColor;
   color: $fontColor;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 4px 4px 4px rgb(119, 119, 119, 0.1);
 }
 
 // img { width: 250px;}
 
 /*===== nav  */
- nav {
-   .navWrapper {
+nav {
+  .navWrapper {
+    z-index: 99999;
     position: fixed;
     top: 50%;
     right: 30px;
@@ -66,6 +71,7 @@ $bgColor: #dddddd;
     display: flex;
     flex-direction: column;
     gap: 5px;
+
     li {
       a {
         width: 10px;
@@ -74,30 +80,35 @@ $bgColor: #dddddd;
         border: 1px solid $maniColorB;
         background-color: $mainColorW;
         display: block;
+
         &.current {
           background-color: $maniColorB;
         }
       }
     }
   }
- }
- /*=== header logo*/
+}
+
+/*=== header logo*/
 header {
-  .logo {
-    position: fixed;
-    top: 30px;
-    left: 30px;
-    height: 100px;
-    width: 150px;
-    img {
-      width: 100%;
+  a {
+    .logo {
+      z-index: 99999;
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      height: 100px;
+      width: 150px;
+      img {
+        width: 100%;
+      }
     }
   }
 }
+
 #fullpage {
   width: 100%;
   height: 100vh;
-
 
 
   /*===== main */
@@ -115,6 +126,7 @@ header {
       grid-template-columns: repeat(8, 1fr);
       grid-template-rows: repeat(4, 1fr);
       gap: 2px;
+
       .mainGrid_item {
         width: 100%;
         height: 100%;
@@ -122,11 +134,13 @@ header {
         border-radius: 25px;
         display: grid;
         place-items: center;
+
         img {
           border-radius: 25px;
           width: 80%;
         }
       }
+
       .mainGrid_contents {
         width: 100%;
         height: 100%;
@@ -135,30 +149,57 @@ header {
         grid-row: 2 / 4;
         grid-column: 4 / 6;
         text-align: center;
-        border: 1px solid $bgColor;
+        border: 3px solid $bgColor;
         border-radius: 25px;
         background-color: $mainColorW;
+
         .contentsTop {
           padding: 2vw 2vw 0 2vw;
           border-bottom: 4px solid $bgColor;
+
           .subTitle {
             @include enTitle(25px, 800, $mainTextColor);
           }
+
           .logo {
             width: 100%;
+
             img {
               width: 100%;
 
             }
           }
         }
+
         .contentsBottom {
           padding: 2vw;
           display: flex;
           flex-direction: column;
           justify-content: center;
           gap: 30px;
-          @include enTitle(15px, 800, $mainTextColor)
+          @include enTitle(20px, 800, $mainTextColor);
+          li {
+            a {
+              position: relative;
+              &::after {
+                content: "";
+                width: 0%;
+                height: 2px;
+                background-color: #222222;
+                position: absolute;
+                bottom: -3px;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: 0.2s;
+              }
+            }
+            a:hover {
+              &::after {
+                content: "";
+                width: 110%;
+              }
+            }
+          }
         }
       }
     }
@@ -166,11 +207,160 @@ header {
 
 
   /*===== togo */
-  .togo {}
+  .togo {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: $bgColor;
+    display: grid;
+    place-items: center;
+
+    .contents {
+      .title {
+        @include enTitle(40px, 800, $mainTextColor);
+        margin-bottom: 50px;
+      }
+
+      .text {
+        @include koText(18px, 400);
+        margin-bottom: 150px;
+      }
+
+      .togoImg {
+        display: flex;
+        gap: 100px;
+        align-items: center;
+
+        .md {
+          max-width: 250px;
+          min-width: 100px;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .sm {
+          max-width: 220px;
+          min-width: 80px;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 
 
   /*===== products */
-  .products {}
+  .products {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr 3fr;
+
+    .textWrapper {
+      margin-bottom: 80px;
+
+      .title {
+        @include enTitle(40px, 800, $mainTextColor);
+        padding: 100px 0 15px 0;
+      }
+
+      .text {
+        @include koText(18px, 400);
+
+      }
+    }
+
+    .productCategory {
+      justify-content: center;
+      display: flex;
+      gap: 40px;
+      margin-bottom: 40px;
+      li {
+        width: 80px;
+
+        a {
+          display: block;
+          position: relative;
+          margin-bottom: 10px;
+          height: 80px;
+          width: 100%;
+          &:hover {
+            &::after {
+              content: "";
+              width: 93px;
+              height: 93px;
+              border-radius: 50%;
+              border: 3px solid $bgColor;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          img {
+            border-radius: 50%;
+            width: 100%;
+          }
+        }
+
+        p {
+          width: 100%;
+          text-wrap: nowrap;
+          @include koText(15px, 800)
+        }
+      }
+    }
+
+    .slideContainer {
+      overflow: hidden;
+      background-color: $mainColorW;
+      .slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        width: calc(230px * 20);
+        &.left {
+          @keyframes left {
+            0% {
+              transform: translateX(0);
+            }
+          
+            100% {
+              transform: translateX(calc(-230px * 10))
+            }
+          }
+          animation: left 40s linear infinite;
+        }
+        &.right {
+          @keyframes right {
+            0% {
+              transform: translateX(calc(-230px * 10))
+            }
+            
+            100% {
+              transform: translateX(0);
+            }
+          }
+          animation: right 40s linear infinite;
+        }
+        li {
+          margin: 20px 0;
+          max-width: 190px;
+          min-width: 100px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 
 
   /*===== philosophy */
@@ -178,7 +368,66 @@ header {
 
 
   /*===== michelDucaroy */
-  .michelDucaroy {}
+  .michelDucaroy {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    .textWrapper {
+      margin-bottom: 40px;
+      .title {
+        @include enTitle(40px, 800, $mainTextColor);
+        padding: 100px 0 15px 0;
+      }
+      .text {
+        @include koText(18px, 400);
+      }
+    }
+    .btn {
+      margin-bottom: 100px;
+      a {
+        @include btn($mainTextColor, $mainColorW);
+        border: 1px solid $mainTextColor;
+        transition: 0.2s;
+      }
+      &:hover {
+        a {
+          background-color: transparent;
+          color: $mainTextColor;
+        }
+      }
+    }
+    .productList {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      .card {
+        max-width: 250px;
+        min-width: 100px;
+        border: 1px solid $mainTextColor;
+        background-color: $mainColorW;
+        border-radius: 25px;
+        .imgWrapper {
+          padding: 25px;
+          width: 100%;
+          border-bottom: 1px solid $mainTextColor;
+          img {
+            width: 100%;
+          }
+        }
+        .textWrapper {
+          padding: 25px;
+          text-align: left;
+          margin: 0;
+          .textWrapper {
+            @include enTitle(13px, 800, $mainTextColor)
+          }
+          .productName {
+            @include enTitle(13px, 300, $mainTextColor)
+          } 
+        }
+      }
+    }
+  }
 
 
   /*===== ourDesingers */

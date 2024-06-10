@@ -2,6 +2,7 @@
 /*===== 변수  */
 /*===== nav  */
 nav .navWrapper {
+  z-index: 99999;
   position: fixed;
   top: 50%;
   right: 30px;
@@ -24,14 +25,15 @@ nav .navWrapper li a.current {
 }
 
 /*=== header logo*/
-header .logo {
+header a .logo {
+  z-index: 99999;
   position: fixed;
   top: 30px;
   left: 30px;
   height: 100px;
   width: 150px;
 }
-header .logo img {
+header a .logo img {
   width: 100%;
 }
 
@@ -81,7 +83,7 @@ header .logo img {
   grid-row: 2/4;
   grid-column: 4/6;
   text-align: center;
-  border: 1px solid #dddddd;
+  border: 3px solid #dddddd;
   border-radius: 25px;
   background-color: #F6F6F6;
 }
@@ -108,7 +110,256 @@ header .logo img {
   justify-content: center;
   gap: 30px;
   font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 20px;
+  font-weight: 800;
+  color: #222222;
+}
+#fullpage .main .mainGrid .mainGrid_contents .contentsBottom li a {
+  position: relative;
+}
+#fullpage .main .mainGrid .mainGrid_contents .contentsBottom li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #222222;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.2s;
+}
+#fullpage .main .mainGrid .mainGrid_contents .contentsBottom li a:hover::after {
+  content: "";
+  width: 110%;
+}
+#fullpage .togo {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: #dddddd;
+  display: grid;
+  place-items: center;
+}
+#fullpage .togo .contents .title {
+  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 40px;
+  font-weight: 800;
+  color: #222222;
+  margin-bottom: 50px;
+}
+#fullpage .togo .contents .text {
+  font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 18px;
+  font-weight: 400;
+  color: #222222;
+  line-height: 1.5;
+  margin-bottom: 150px;
+}
+#fullpage .togo .contents .togoImg {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+#fullpage .togo .contents .togoImg .md {
+  max-width: 250px;
+  min-width: 100px;
+}
+#fullpage .togo .contents .togoImg .md img {
+  width: 100%;
+}
+#fullpage .togo .contents .togoImg .sm {
+  max-width: 220px;
+  min-width: 80px;
+}
+#fullpage .togo .contents .togoImg .sm img {
+  width: 100%;
+}
+#fullpage .products {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr 3fr;
+}
+#fullpage .products .textWrapper {
+  margin-bottom: 80px;
+}
+#fullpage .products .textWrapper .title {
+  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 40px;
+  font-weight: 800;
+  color: #222222;
+  padding: 100px 0 15px 0;
+}
+#fullpage .products .textWrapper .text {
+  font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 18px;
+  font-weight: 400;
+  color: #222222;
+  line-height: 1.5;
+}
+#fullpage .products .productCategory {
+  justify-content: center;
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+#fullpage .products .productCategory li {
+  width: 80px;
+}
+#fullpage .products .productCategory li a {
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+  height: 80px;
+  width: 100%;
+}
+#fullpage .products .productCategory li a:hover::after {
+  content: "";
+  width: 93px;
+  height: 93px;
+  border-radius: 50%;
+  border: 3px solid #dddddd;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#fullpage .products .productCategory li a img {
+  border-radius: 50%;
+  width: 100%;
+}
+#fullpage .products .productCategory li p {
+  width: 100%;
+  text-wrap: nowrap;
+  font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 15px;
   font-weight: 800;
+  color: #222222;
+  line-height: 1.5;
+}
+#fullpage .products .slideContainer {
+  overflow: hidden;
+  background-color: #F6F6F6;
+}
+#fullpage .products .slideContainer .slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 4600px;
+}
+#fullpage .products .slideContainer .slide.left {
+  animation: left 40s linear infinite;
+}
+@keyframes left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-2300px);
+  }
+}
+#fullpage .products .slideContainer .slide.right {
+  animation: right 40s linear infinite;
+}
+@keyframes right {
+  0% {
+    transform: translateX(-2300px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+#fullpage .products .slideContainer .slide li {
+  margin: 20px 0;
+  max-width: 190px;
+  min-width: 100px;
+}
+#fullpage .products .slideContainer .slide li img {
+  width: 100%;
+}
+#fullpage .michelDucaroy {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+#fullpage .michelDucaroy .textWrapper {
+  margin-bottom: 40px;
+}
+#fullpage .michelDucaroy .textWrapper .title {
+  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 40px;
+  font-weight: 800;
+  color: #222222;
+  padding: 100px 0 15px 0;
+}
+#fullpage .michelDucaroy .textWrapper .text {
+  font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 18px;
+  font-weight: 400;
+  color: #222222;
+  line-height: 1.5;
+}
+#fullpage .michelDucaroy .btn {
+  margin-bottom: 100px;
+}
+#fullpage .michelDucaroy .btn a {
+  max-width: 310px;
+  min-width: 200px;
+  height: 50px;
+  padding: 15px;
+  border-radius: 50px;
+  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 15px;
+  font-weight: 800;
+  color: #F6F6F6;
+  background-color: #222222;
+  color: #F6F6F6;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 4px 4px 4px rgba(119, 119, 119, 0.1);
+  border: 1px solid #222222;
+  transition: 0.2s;
+}
+#fullpage .michelDucaroy .btn:hover a {
+  background-color: transparent;
+  color: #222222;
+}
+#fullpage .michelDucaroy .productList {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+#fullpage .michelDucaroy .productList .card {
+  max-width: 250px;
+  min-width: 100px;
+  border: 1px solid #222222;
+  background-color: #F6F6F6;
+  border-radius: 25px;
+}
+#fullpage .michelDucaroy .productList .card .imgWrapper {
+  padding: 25px;
+  width: 100%;
+  border-bottom: 1px solid #222222;
+}
+#fullpage .michelDucaroy .productList .card .imgWrapper img {
+  width: 100%;
+}
+#fullpage .michelDucaroy .productList .card .textWrapper {
+  padding: 25px;
+  text-align: left;
+  margin: 0;
+}
+#fullpage .michelDucaroy .productList .card .textWrapper .textWrapper {
+  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 13px;
+  font-weight: 800;
+  color: #222222;
+}
+#fullpage .michelDucaroy .productList .card .textWrapper .productName {
+  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 13px;
+  font-weight: 300;
   color: #222222;
 }/*# sourceMappingURL=index.css.map */
