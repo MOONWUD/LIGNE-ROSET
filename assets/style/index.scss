@@ -1,0 +1,192 @@
+// Breakpoints
+$breakpoint-mobile: 500px;
+$breakpoint-tablet: 1000px;
+$breakpoint-desktop: 1390px;
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile + 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet + 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+
+/*===== 변수  */ 
+$mainColorW: #F6F6F6;
+$maniColorB: #777777;
+$mainTextColor: #222222;
+$bgColor: #dddddd;
+
+@mixin enTitle ($size: 40px, $weight: 800, $color: $mainColorB) {
+  font-family: 'Segoe', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', cursive;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin koText ($size: 18px, $weight: 300) {
+  font-family: 'SUIT', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', cursive;
+  font-size: $size;
+  font-weight: $weight;
+  color: $mainTextColor;
+}
+
+@mixin btn ($bgColor: $mainColorB, $fontColor: $maniColorW) {
+  max-width: 310px;
+  min-width: 200px;
+  height: 50px;
+  padding: 15px;
+  border-radius: 50px;
+  background-color: $bgColor;
+  @include enTitle(15px, 800, $mainColorW);
+  color: $fontColor;
+}
+
+// img { width: 250px;}
+
+/*===== nav  */
+ nav {
+   .navWrapper {
+    position: fixed;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    text-indent: -99999px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    li {
+      a {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid $maniColorB;
+        background-color: $mainColorW;
+        display: block;
+        &.current {
+          background-color: $maniColorB;
+        }
+      }
+    }
+  }
+ }
+ /*=== header logo*/
+header {
+  .logo {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    height: 100px;
+    width: 150px;
+    img {
+      width: 100%;
+    }
+  }
+}
+#fullpage {
+  width: 100%;
+  height: 100vh;
+
+
+
+  /*===== main */
+  .main {
+    background-color: $bgColor;
+    width: 100%;
+    height: 100%;
+
+    /*=== mainGrid */
+    .mainGrid {
+      padding-top: 100px;
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 2px;
+      .mainGrid_item {
+        width: 100%;
+        height: 100%;
+        background-color: $mainColorW;
+        border-radius: 25px;
+        display: grid;
+        place-items: center;
+        img {
+          border-radius: 25px;
+          width: 80%;
+        }
+      }
+      .mainGrid_contents {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-row: 2 / 4;
+        grid-column: 4 / 6;
+        text-align: center;
+        border: 1px solid $bgColor;
+        border-radius: 25px;
+        background-color: $mainColorW;
+        .contentsTop {
+          padding: 2vw 2vw 0 2vw;
+          border-bottom: 4px solid $bgColor;
+          .subTitle {
+            @include enTitle(25px, 800, $mainTextColor);
+          }
+          .logo {
+            width: 100%;
+            img {
+              width: 100%;
+
+            }
+          }
+        }
+        .contentsBottom {
+          padding: 2vw;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 30px;
+          @include enTitle(15px, 800, $mainTextColor)
+        }
+      }
+    }
+  }
+
+
+  /*===== togo */
+  .togo {}
+
+
+  /*===== products */
+  .products {}
+
+
+  /*===== philosophy */
+  .philosophy {}
+
+
+  /*===== michelDucaroy */
+  .michelDucaroy {}
+
+
+  /*===== ourDesingers */
+  .ourDesingers {}
+
+
+  /*===== footer */
+  .footer {}
+
+
+}
