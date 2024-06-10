@@ -45,7 +45,7 @@ header a .logo img {
   /*===== products */
   /*===== philosophy */
   /*===== michelDucaroy */
-  /*===== ourDesingers */
+  /*===== ourDesigners */
   /*===== footer */
 }
 #fullpage .main {
@@ -279,6 +279,151 @@ header a .logo img {
 #fullpage .products .slideContainer .slide li img {
   width: 100%;
 }
+#fullpage .philosophy {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#fullpage .philosophy .centerItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#fullpage .philosophy .centerItem .textWrapper {
+  margin-bottom: 40px;
+}
+#fullpage .philosophy .centerItem .textWrapper .title {
+  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 40px;
+  font-weight: 800;
+  color: #222222;
+  padding: 100px 0 15px 0;
+}
+#fullpage .philosophy .centerItem .textWrapper .text {
+  font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 18px;
+  font-weight: 400;
+  color: #222222;
+  line-height: 1.5;
+}
+#fullpage .philosophy .centerItem .btn {
+  margin-bottom: 100px;
+}
+#fullpage .philosophy .centerItem .btn a {
+  width: 200px;
+  height: 50px;
+  padding: 15px;
+  border-radius: 50px;
+  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 15px;
+  font-weight: 800;
+  color: #F6F6F6;
+  background-color: #222222;
+  color: #F6F6F6;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 4px 4px 4px rgba(119, 119, 119, 0.1);
+  border: 1px solid #222222;
+  transition: 0.2s;
+}
+#fullpage .philosophy .centerItem .btn:hover a {
+  background-color: transparent;
+  color: #222222;
+}
+#fullpage .philosophy .productList .card {
+  max-width: 210px;
+  min-width: 100px;
+  border: 1px solid #222222;
+  background-color: #F6F6F6;
+  border-radius: 25px;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: rotate(0deg);
+}
+#fullpage .philosophy .productList .card .imgWrapper {
+  padding: 25px;
+  width: 100%;
+  border-bottom: 1px solid #222222;
+}
+#fullpage .philosophy .productList .card .imgWrapper img {
+  width: 100%;
+}
+#fullpage .philosophy .productList .card .textWrapper {
+  padding: 25px;
+  text-align: left;
+  margin: 0;
+}
+#fullpage .philosophy .productList .card .textWrapper .textWrapper {
+  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 13px;
+  font-weight: 800;
+  color: #222222;
+}
+#fullpage .philosophy .productList .card .textWrapper .productName {
+  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 13px;
+  font-weight: 300;
+  color: #222222;
+}
+#fullpage .philosophy .productList .card1 {
+  top: 60%;
+  left: 30%;
+  transform: rotate(-29deg);
+}
+#fullpage .philosophy .productList .card2 {
+  top: 75%;
+  left: 5%;
+  transform: rotate(28deg);
+}
+#fullpage .philosophy .productList .card3 {
+  top: 72%;
+  left: 55%;
+  transform: rotate(11deg);
+}
+#fullpage .philosophy .productList .card4 {
+  top: 10%;
+  left: 70%;
+  transform: rotate(-11deg);
+}
+#fullpage .philosophy .productList .card5 {
+  top: -10%;
+  left: 30%;
+  transform: rotate(-9deg);
+}
+#fullpage .philosophy .productList .card6 {
+  top: 20%;
+  left: 10%;
+  transform: rotate(-30deg);
+}
+#fullpage .philosophy .productList .card7 {
+  top: 10%;
+  left: 0%;
+  transform: rotate(28deg);
+}
+#fullpage .philosophy .productList .card8 {
+  top: -15%;
+  left: 55%;
+  transform: rotate(-48deg);
+}
+#fullpage .philosophy .productList .card9 {
+  top: 20%;
+  left: 85%;
+  transform: rotate(19deg);
+}
+#fullpage .philosophy .productList .card10 {
+  top: 40%;
+  left: 90%;
+  transform: rotate(-18deg);
+}
+#fullpage .philosophy .productList .card11 {
+  top: 55%;
+  left: 73%;
+  transform: rotate(29deg);
+}
 #fullpage .michelDucaroy {
   width: 100%;
   height: 100%;
@@ -305,8 +450,7 @@ header a .logo img {
   margin-bottom: 100px;
 }
 #fullpage .michelDucaroy .btn a {
-  max-width: 310px;
-  min-width: 200px;
+  width: 200px;
   height: 50px;
   padding: 15px;
   border-radius: 50px;
@@ -362,4 +506,103 @@ header a .logo img {
   font-size: 13px;
   font-weight: 300;
   color: #222222;
+}
+#fullpage .ourDesigners {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+#fullpage .ourDesigners .centerItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#fullpage .ourDesigners .centerItem .textWrapper {
+  margin-bottom: 40px;
+}
+#fullpage .ourDesigners .centerItem .textWrapper .title {
+  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 40px;
+  font-weight: 800;
+  color: #222222;
+  padding: 100px 0 15px 0;
+}
+#fullpage .ourDesigners .centerItem .textWrapper .text {
+  font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 18px;
+  font-weight: 400;
+  color: #222222;
+  line-height: 1.5;
+}
+#fullpage .ourDesigners .centerItem .btn {
+  margin-bottom: 100px;
+}
+#fullpage .ourDesigners .centerItem .btn a {
+  width: 200px;
+  height: 50px;
+  padding: 15px;
+  border-radius: 50px;
+  font-family: "Segoe", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 15px;
+  font-weight: 800;
+  color: #F6F6F6;
+  background-color: #222222;
+  color: #F6F6F6;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 4px 4px 4px rgba(119, 119, 119, 0.1);
+  border: 1px solid #222222;
+  transition: 0.2s;
+}
+#fullpage .ourDesigners .centerItem .btn:hover a {
+  background-color: transparent;
+  color: #222222;
+}
+#fullpage .ourDesigners .designersList {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 0px 20px rgba(119, 119, 119, 0.1);
+  height: 3480px;
+}
+@keyframes top {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateY(-1740px);
+  }
+}
+@keyframes botton {
+  0% {
+    transform: translateY(-1740px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+#fullpage .ourDesigners .designersList.left1 {
+  left: 0;
+  animation: top 50s linear infinite;
+}
+#fullpage .ourDesigners .designersList.left2 {
+  left: 300px;
+  animation: botton 50s linear infinite;
+}
+#fullpage .ourDesigners .designersList.right1 {
+  right: 0;
+  animation: botton 50s linear infinite;
+}
+#fullpage .ourDesigners .designersList.right2 {
+  right: 300px;
+  animation: top 50s linear infinite;
+}
+#fullpage .ourDesigners .designersList li {
+  height: 290px;
+}
+#fullpage .ourDesigners .designersList li img {
+  height: 100%;
 }/*# sourceMappingURL=index.css.map */
