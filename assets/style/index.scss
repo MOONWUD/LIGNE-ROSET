@@ -58,7 +58,6 @@ $animation: 55s;
   background-color: $btnBgColor;
   color: $fontColor;
   display: block;
-  margin: 0 auto;
   box-shadow: 4px 4px 4px rgb(119, 119, 119, 0.1);
   transition: 0.3s;
 }
@@ -503,65 +502,65 @@ header {
 
 
   /*===== michelDucaroy */
-  .michelDucaroy {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    .textWrapper {
-      margin-bottom: 40px;
-      .title {
-        @include enTitle(40px, 800, $mainTextColor);
-        padding: 100px 0 15px 0;
-      }
-      .text {
-        @include koText(18px, 400);
-      }
-    }
-    .btn {
-      margin-bottom: 100px;
-      a {
-        @include btn($mainTextColor, $mainColorW);
-        border: 1px solid $mainTextColor;
-      }
-      &:hover {
-        a {
-          background-color: transparent;
-          color: $mainTextColor;
-        }
-      }
-    }
-    .productList {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      .card {
-        max-width: 210px;
-        min-width: 100px;
-        border: 1px solid $mainTextColor;
-        background-color: $mainColorW;
-        border-radius: 25px;
-        .imgWrapper {
-          padding: 25px;
-          width: 100%;
-          border-bottom: 1px solid $mainTextColor;
-          img {
-            width: 100%;
-          }
-        }
-        .textWrapper {
-          padding: 25px;
-          text-align: left;
-          margin: 0;
-          .textWrapper {
-            @include enTitle(13px, 800, $mainTextColor)
-          }
-          .productName {
-            @include enTitle(13px, 300, $mainTextColor)
-          } 
-        }
-      }
-    }
-  }
+  // .michelDucaroy {
+  //   width: 100%;
+  //   height: 100%;
+  //   text-align: center;
+  //   .textWrapper {
+  //     margin-bottom: 40px;
+  //     .title {
+  //       @include enTitle(40px, 800, $mainTextColor);
+  //       padding: 100px 0 15px 0;
+  //     }
+  //     .text {
+  //       @include koText(18px, 400);
+  //     }
+  //   }
+  //   .btn {
+  //     margin-bottom: 100px;
+  //     a {
+  //       @include btn($mainTextColor, $mainColorW);
+  //       border: 1px solid $mainTextColor;
+  //     }
+  //     &:hover {
+  //       a {
+  //         background-color: transparent;
+  //         color: $mainTextColor;
+  //       }
+  //     }
+  //   }
+  //   .productList {
+  //     display: flex;
+  //     justify-content: center;
+  //     gap: 25px;
+  //     .card {
+  //       max-width: 210px;
+  //       min-width: 100px;
+  //       border: 1px solid $mainTextColor;
+  //       background-color: $mainColorW;
+  //       border-radius: 25px;
+  //       .imgWrapper {
+  //         padding: 25px;
+  //         width: 100%;
+  //         border-bottom: 1px solid $mainTextColor;
+  //         img {
+  //           width: 100%;
+  //         }
+  //       }
+  //       .textWrapper {
+  //         padding: 25px;
+  //         text-align: left;
+  //         margin: 0;
+  //         .textWrapper {
+  //           @include enTitle(13px, 800, $mainTextColor)
+  //         }
+  //         .productName {
+  //           @include enTitle(13px, 300, $mainTextColor)
+  //         } 
+  //       }
+  //     }
+  //   }
+  // }
 
 
   /*===== ourDesigners */
@@ -671,6 +670,8 @@ header {
       gap: 15px;
       margin-bottom: 80px;
       .btn {
+        display: grid;
+        justify-content: center;
         a {
           @include btn($mainColorW, $mainTextColor);
           border: 1px solid $mainColorW;
@@ -704,6 +705,5 @@ header {
       }
     }
   }
-
 
 }

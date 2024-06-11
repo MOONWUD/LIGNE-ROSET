@@ -73,7 +73,7 @@ let num = 0;
 const imgs = () => {
   for(let i =1; i <= 2; i++) {
     num += i;
-    if(num<= 70){
+    if(num<= 80){
       $('.mainGrid .mainGrid_item').eq(0).children().attr({src : `./assets/images/p_${num}.jpg`});
       $('.mainGrid .mainGrid_item').eq(1).children().attr({src : `./assets/images/p_${num+2}.jpg`});
       $('.mainGrid .mainGrid_item').eq(2).children().attr({src : `./assets/images/p_${num+4}.jpg`});
