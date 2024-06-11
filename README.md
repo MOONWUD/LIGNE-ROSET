@@ -3,7 +3,7 @@
 ## 240611_화
   - 자잘한 java event 넣기
     - nav 페이지 이동 완료
-    - main 셋인터벌로 사진 변화
+    - main 셋인터벌로 사진 변화 완료
     - Philosophy에서 Michel Ducaroy 변화
   - 미디어쿼리 완성히기 
 
