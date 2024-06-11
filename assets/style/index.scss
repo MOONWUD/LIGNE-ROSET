@@ -84,12 +84,12 @@ nav {
     text-indent: -99999px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
 
     li {
       a {
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
         border: 1px solid $mainColorB;
         background-color: $mainColorW;
@@ -107,18 +107,17 @@ nav {
 header {
   transition: $transition;
   &.active {
-    a {
-      .logo {
-        transition: $transition;
-        width: 140px;
-        img {
-          width: 100%;
-        }
-      }
-    }
+    height: 80px;
     background-color: transparent;
     .rightContents {
       transform: translateY(0);
+    }
+  }
+  &.show {
+    .rightContents {
+      a {
+        color: $mainColorW;
+      }
     }
   }
   position: fixed;
@@ -142,19 +141,16 @@ header {
   }
 
   .rightContents{
-    padding: 10px;
-    &.show {
-      background-color: rgba(246, 246, 246, 0.8);
-      border-radius: 20px;
-    }
+    transition: $transition;
     transform: translateY(-200px);
     img {
-      height: 25px;
-      margin-right: 10px;
+      height: 18px;
+      margin-right: 8px;
+      vertical-align: middle;
     }
     a {
-      vertical-align: middle;
-      @include enTitle(18px, 400, $mainColorB)
+      @include koText(15px, 300);
+      color: $mainColorB;
     }
   }
 }
@@ -194,6 +190,16 @@ header {
         }
       }
 
+      .bgContents {
+        background-color: #ddd;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-row: 2 / 4;
+        grid-column: 4 / 6;
+        border: 3px solid $bgColor;
+        border-radius: 25px;
+      }
       .mainGrid_contents {
         width: 100%;
         height: 100%;
@@ -270,11 +276,13 @@ header {
     background-color: $bgColor;
     display: grid;
     place-items: center;
-
+    overflow: hidden;
     .contents {
       .title {
         @include enTitle(40px, 800, $mainTextColor);
         margin-bottom: 50px;
+        transform: translateY(-300px) scale(1.5);
+        color: #ddd;
       }
 
       .text {
@@ -914,7 +922,7 @@ header {
       display: flex;
       flex-direction: column;
       gap: 15px;
-      margin-bottom: 80px;
+      margin: 20px 0 80px;
 
       .btn {
         display: grid;
@@ -933,7 +941,7 @@ header {
 
     .footerBotton {
       .logo {
-        margin: 0 auto 30px;
+        margin: 30px auto;
         width: 150px;
 
         img {
@@ -949,7 +957,7 @@ header {
         li {
           a {
             transition: 0.3s;
-            @include enTitle(15px, 500, $mainColorB);
+            @include enTitle(15px, 300, $mainColorB);
 
             &:hover {
               color: $mainTextColor;

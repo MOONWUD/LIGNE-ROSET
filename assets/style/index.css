@@ -23,11 +23,11 @@ nav .navWrapper {
   text-indent: -99999px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
 }
 nav .navWrapper li a {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   border: 1px solid #777777;
   background-color: #F6F6F6;
@@ -53,17 +53,14 @@ header {
   justify-content: space-between;
 }
 header.active {
+  height: 80px;
   background-color: transparent;
-}
-header.active a .logo {
-  transition: 0.7s;
-  width: 140px;
-}
-header.active a .logo img {
-  width: 100%;
 }
 header.active .rightContents {
   transform: translateY(0);
+}
+header.show .rightContents a {
+  color: #F6F6F6;
 }
 header a .logo {
   width: 150px;
@@ -72,22 +69,20 @@ header a .logo img {
   width: 100%;
 }
 header .rightContents {
-  padding: 10px;
+  transition: 0.7s;
   transform: translateY(-200px);
 }
-header .rightContents.show {
-  background-color: rgba(246, 246, 246, 0.8);
-  border-radius: 20px;
-}
 header .rightContents img {
-  height: 25px;
-  margin-right: 10px;
+  height: 18px;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 header .rightContents a {
-  vertical-align: middle;
-  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
-  font-size: 18px;
-  font-weight: 400;
+  font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 15px;
+  font-weight: 300;
+  color: #222222;
+  line-height: 1.5;
   color: #777777;
 }
 
@@ -128,6 +123,16 @@ header .rightContents a {
 #fullpage .main .mainGrid .mainGrid_item img {
   border-radius: 25px;
   width: 80%;
+}
+#fullpage .main .mainGrid .bgContents {
+  background-color: #ddd;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-row: 2/4;
+  grid-column: 4/6;
+  border: 3px solid #dddddd;
+  border-radius: 25px;
 }
 #fullpage .main .mainGrid .mainGrid_contents {
   width: 100%;
@@ -193,6 +198,7 @@ header .rightContents a {
   background-color: #dddddd;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 #fullpage .togo .contents .title {
   font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
@@ -200,6 +206,8 @@ header .rightContents a {
   font-weight: 800;
   color: #222222;
   margin-bottom: 50px;
+  transform: translateY(-300px) scale(1.5);
+  color: #ddd;
 }
 #fullpage .togo .contents .text {
   font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
@@ -783,7 +791,7 @@ header .rightContents a {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-bottom: 80px;
+  margin: 20px 0 80px;
 }
 #fullpage .footer .btnWrapper .btn {
   display: grid;
@@ -809,7 +817,7 @@ header .rightContents a {
   background-color: transparent;
 }
 #fullpage .footer .footerBotton .logo {
-  margin: 0 auto 30px;
+  margin: 30px auto;
   width: 150px;
 }
 #fullpage .footer .footerBotton .logo img {
@@ -824,7 +832,7 @@ header .rightContents a {
   transition: 0.3s;
   font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 300;
   color: #777777;
 }
 #fullpage .footer .footerBotton .linkWrapper li a:hover {

@@ -64,14 +64,17 @@ $(window).on('scroll', () => {
     $('header').addClass('active');
     if (scrollY >= box2) {
       $('header a .logo img ').attr({ src: "./assets/images/logo_w.png" })
-      $('header .rightContents').addClass('show');
+      $('header .rightContents img ').attr({ src: "./assets/images/email_w.png" })
+      $('header').addClass('show');
     } else {
       $('header a .logo img ').attr({ src: "./assets/images/logo_b.png" })
-      $('header .rightContents').removeClass('show');
+      $('header .rightContents img ').attr({ src: "./assets/images/email_b.png" })
+      $('header').removeClass('show');
     }
     if (scrollY >= box3) {
-      $('header .rightContents').removeClass('show');
       $('header a .logo img ').attr({ src: "./assets/images/logo_b.png" })
+      $('header .rightContents img ').attr({ src: "./assets/images/email_b.png" })
+      $('header').removeClass('show');
     }
   } else {
     $('header').removeClass('active');
@@ -93,6 +96,8 @@ $('.navWrapper li').on('click', (e) => {
 });
 
 /*===== main */
+/*=== img */
+/*=== img */
 let num = 0;
 const imgs = () => {
   for (let i = 1; i <= 2; i++) {
@@ -134,7 +139,40 @@ const imgs = () => {
 
 setInterval(imgs, 2000);
 
+/*=== box */
+gsap.to(".main .mainGrid .mainGrid_contents", {
+  scrollTrigger: {
+    trigger: '.main',//객체기준범위
+    start: "0% 0%",//시작 지점
+    end: "200% 100%",//끝 지점
+    // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+    scrub: 1,//부드러운 스크러빙
+     // markers: true,개발가이드선
+  },
+  y: 300,
+  scale: 0.3,
+  duration: 0.5,
+  opacity: 0,
+});
 
+
+/*===== togo */
+/*=== box */
+gsap.to(".togo .contents .title", {
+  scrollTrigger: {
+    trigger: '.togo',//객체기준범위
+    start: "-10% 0%",//시작 지점
+    end: "90% 100%",//끝 지점
+    // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
+    scrub: 1,//부드러운 스크러빙
+    //markers: true,  개발가이드선
+  },
+  y: 0,
+  scale: 1,
+  duration: 0.5,
+  // opacity: 1,
+  color: "#333",
+});
 /*===== philosophy -> michelDucaroy */
 $(window).on('scroll', () => {
   let michelDucaroytHt = $('.michelDucaroy').offset().top - 450;
