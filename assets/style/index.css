@@ -350,7 +350,7 @@ header a .logo img {
   transform: translate(-50%, -50%);
 }
 #fullpage .philosophy .centerItem .textWrapper {
-  transition: 0.3s;
+  transition: 0.7s;
   margin-bottom: 40px;
 }
 #fullpage .philosophy .centerItem .textWrapper .title {
@@ -399,7 +399,7 @@ header a .logo img {
   top: 0%;
   left: 0%;
   transform: rotate(0deg);
-  transition: 0.3s;
+  transition: 0.7s;
 }
 #fullpage .philosophy .productList .card .imgWrapper {
   padding: 25px;
@@ -535,7 +535,7 @@ header a .logo img {
   margin: 0 auto 100px;
   display: grid;
   place-items: center;
-  transition: 0.5s;
+  transition: 0.7s;
   transform: translateY(-300px);
   opacity: 0;
 }
@@ -565,7 +565,7 @@ header a .logo img {
   gap: 25px;
 }
 #fullpage .michelDucaroy .productList .card {
-  transition: 0.5s;
+  transition: 0.7s;
   max-width: 250px;
   min-width: 100px;
   border: 1px solid #222222;
