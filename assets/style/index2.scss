@@ -1,0 +1,353 @@
+// font
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap'); //   font-family: "Radio Canada Big", sans-serif;
+
+
+// Breakpoints
+$breakpoint-mobile: 500px;
+$breakpoint-tablet: 1000px;
+$breakpoint-desktop: 1390px;
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile + 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet + 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+
+/*===== 변수  */
+$mainColorW: #F6F6F6;
+$mainColorB: #777777;
+$mainTextColor: #222222;
+$bgColor: #dddddd;
+$animation: 55s;
+
+@mixin enTitle ($size: 40px, $weight: 800, $color: $mainColorB) {
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', cursive;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin koText ($size: 18px, $weight: 300) {
+  font-family: 'SUIT', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', cursive;
+  font-size: $size;
+  font-weight: $weight;
+  color: $mainTextColor;
+  line-height: 1.5;
+}
+
+@mixin btn ($btnBgColor: $mainColorB, $fontColor: $maniColorW) {
+  // max-width: 310px;
+  width: 300px;
+  height: 50px;
+  padding: 15px;
+  border-radius: 50px;
+  @include enTitle(15px, 800, $mainColorW);
+  background-color: $btnBgColor;
+  color: $fontColor;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 4px 4px 4px rgb(119, 119, 119, 0.1);
+  transition: 0.3s;
+}
+
+
+  /*===== philosophy */
+  .philosophy {
+    &.show {
+      .centerItem {
+        .textWrapper {
+          margin-top: 130vh;
+          opacity: 0.6;
+        }
+      }
+  
+      .productList {
+        .card1 {
+          margin-top: 1000px;
+        }
+        .card2 {
+          margin-top: 1000px;
+        }
+        .card3 {
+          margin-top: 1000px;
+        }
+        .card4 {
+          margin-top: 1000px;
+        }
+        .card5 {
+          margin-top: -100px;
+          opacity: 0;
+        }
+        .card6 {
+          margin-left: -100px;
+          opacity: 0;
+        }
+        .card7 {
+          margin: -100px 0 0 -100px;
+          opacity: 0;
+        }
+        .card8 {
+          margin: -100px 0 0 -100px;
+          opacity: 0;
+        }
+        .card9 {
+          margin-top: -300px;
+          opacity: 0;
+        }
+        .card10 {
+          margin-top: -400px;
+          opacity: 0;
+        }
+        .card11 {
+          margin-top: 500px;
+          opacity: 0;
+        }
+      }
+    }
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    .centerItem {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      .textWrapper {
+        transition: 0.5s;
+        margin-bottom: 40px;
+        .title {
+          @include enTitle(40px, 800, $mainTextColor);
+          padding: 100px 0 15px 0;
+        }
+        .text {
+          @include koText(18px, 400);
+        }
+      }
+      .btn {
+        margin-bottom: 100px;
+        a {
+          @include btn($mainTextColor, $mainColorW);
+          border: 1px solid $mainTextColor;
+        }
+        &:hover {
+          a {
+            background-color: transparent;
+            color: $mainTextColor;
+          }
+        }
+      }
+    }
+
+    .productList {
+      .card {
+        width: 210px;
+        // min-width: 100px;
+        border: 1px solid $mainTextColor;
+        background-color: $mainColorW;
+        border-radius: 25px;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        transform: rotate(0deg);
+        transition: 0.5s;
+        .imgWrapper {
+          padding: 25px;
+          width: 100%;
+          border-bottom: 1px solid $mainTextColor;
+          img {
+            width: 100%;
+          }
+        }
+        .textWrapper {
+          padding: 25px;
+          text-align: left;
+          margin: 0;
+          .textWrapper {
+            @include enTitle(13px, 800, $mainTextColor)
+          }
+          .productName {
+            @include enTitle(13px, 300, $mainTextColor)
+          } 
+        }
+      }
+      .card1 {
+        top: 60%;
+        left: 30%;
+        transform: rotate(-29deg);
+      }
+      .card2 {
+        top: 75%;
+        left: 5%;
+        transform: rotate(28deg);
+      }
+      .card3 {
+        top: 72%;
+        left: 55%;
+        transform: rotate(11deg);
+      }
+      .card4 {
+        top: 10%;
+        left: 70%;
+        transform: rotate(-11deg);
+      }
+      .card5 {
+        top: -10%;
+        left: 30%;
+        transform: rotate(-9deg);
+      }
+      .card6 {
+        top: 20%;
+        left: 10%;
+        transform: rotate(-30deg);
+      }
+      .card7 {
+        top: 10%;
+        left: 0%;
+        transform: rotate(28deg);
+      }
+      .card8 {
+        top: -15%;
+        left: 55%;
+        transform: rotate(-48deg);
+      }
+      .card9 {
+        top: 20%;
+        left: 85%;
+        transform: rotate(19deg);
+      }
+      .card10 {
+        top: 40%;
+        left: 90%;
+        transform: rotate(-18deg);
+      }
+      .card11 {
+        top: 55%;
+        left: 73%;
+        transform: rotate(29deg);
+      }
+    }
+  }
+
+
+/*===== michelDucaroy */ 
+.michelDucaroy {
+  &.show {
+    .mainTextWrapper {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .btn {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .productList {
+      .card {
+        &:nth-child(1) {
+          transform: translate(0) rotate(0);
+        }
+        &:nth-child(2) {
+          transform: translate(0) rotate(0);
+        }
+        &:nth-child(3) {
+          transform: translate(0) rotate(0);
+        }
+        &:nth-child(4) {
+          transform: translate(0) rotate(0);
+        }
+      }
+    }
+  }
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+  .mainTextWrapper {
+    transition: 0.3s;
+    transform: translateY(-300px);
+    opacity: 0;
+    margin-bottom: 40px;
+    .title {
+
+      @include enTitle(40px, 800, $mainTextColor);
+      padding: 100px 0 15px 0;
+    }
+    .text {
+      @include koText(18px, 400);
+    }
+  }
+  .btn {
+    margin-bottom: 100px;
+    transition: 0.3s;
+    transform: translateY(-300px);
+    opacity: 0;
+    a {
+      @include btn($mainTextColor, $mainColorW);
+      border: 1px solid $mainTextColor;
+    }
+    &:hover {
+      a {
+        background-color: transparent;
+        color: $mainTextColor;
+      }
+    }
+  }
+  .productList {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    .card {
+      transition: 0.5s;
+      &:nth-child(1) {
+        transform:  translate(-550px, -800px) rotate(28deg);
+      }
+      &:nth-child(2) {
+        transform:  translate(120px, -800px) rotate(-29deg);
+      }
+      &:nth-child(3) {
+        transform:  translate(60px, -800px) rotate(11deg);
+      }
+      &:nth-child(4) {
+        transform:  translate(90px, -900px) rotate(-11deg);
+      }
+      max-width: 250px;
+      min-width: 100px;
+      border: 1px solid $mainTextColor;
+      background-color: $mainColorW;
+      border-radius: 25px;
+      .imgWrapper {
+        padding: 25px;
+        width: 100%;
+        border-bottom: 1px solid $mainTextColor;
+        img {
+          width: 100%;
+        }
+      }
+      .textWrapper {
+        padding: 25px;
+        text-align: left;
+        margin: 0;
+        .textWrapper {
+          @include enTitle(13px, 800, $mainTextColor)
+        }
+        .productName {
+          @include enTitle(13px, 300, $mainTextColor)
+        } 
+      }
+    }
+  }
+}

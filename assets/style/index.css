@@ -1,6 +1,18 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap");
 /*===== 변수  */
+/*===== style */
+*::-moz-selection {
+  background-color: #CDE8E5;
+}
+*::selection {
+  background-color: #CDE8E5;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 /*===== nav  */
 nav .navWrapper {
   z-index: 99999;
@@ -477,7 +489,7 @@ header a .logo img {
   gap: 25px;
 }
 #fullpage .michelDucaroy .productList .card {
-  max-width: 250px;
+  max-width: 210px;
   min-width: 100px;
   border: 1px solid #222222;
   background-color: #F6F6F6;
@@ -514,6 +526,7 @@ header a .logo img {
   position: relative;
   text-align: center;
   overflow: hidden;
+  background-color: #F6F6F6;
 }
 #fullpage .ourDesigners .centerItem {
   position: absolute;

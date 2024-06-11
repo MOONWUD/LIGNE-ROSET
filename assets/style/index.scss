@@ -63,7 +63,14 @@ $animation: 55s;
   transition: 0.3s;
 }
 
+/*===== style */
 
+*::selection {
+  background-color: #CDE8E5;
+}
+::-webkit-scrollbar {
+  display: none;
+}
 /*===== nav  */
 nav {
   .navWrapper {
@@ -528,7 +535,7 @@ header {
       justify-content: center;
       gap: 25px;
       .card {
-        max-width: 250px;
+        max-width: 210px;
         min-width: 100px;
         border: 1px solid $mainTextColor;
         background-color: $mainColorW;
@@ -564,6 +571,7 @@ header {
     position: relative;
     text-align: center;
     overflow: hidden;
+    background-color: $mainColorW;
     .centerItem {
       position: absolute;
       top: 50%;
