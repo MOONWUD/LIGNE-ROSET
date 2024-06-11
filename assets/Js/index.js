@@ -24,36 +24,7 @@ $('.box').each(function () {
   });
 });
 
-// gsap.registerPlugin(ScrollTrigger);
-// gsap.registerPlugin(ScrollToPlugin);
 
-// let sections = gsap.utils.toArray(".box");
-
-// function goToSection(i) {
-//   gsap.to(window, {
-//     scrollTo: { y: i * innerHeight, autoKill: false, ease: "Power3.easeInOut" },
-//     duration: 0.85
-//   });
-// }
-
-// ScrollTrigger.defaults({
-//   // markers: true
-// });
-
-// sections.forEach((eachPanel, i) => {
-//   // const mainAnim = gsap.timeline({ paused: true });
-
-//   ScrollTrigger.create({
-//     trigger: eachPanel,
-//     onEnter: () => goToSection(i)
-//   });
-
-//   ScrollTrigger.create({
-//     trigger: eachPanel,
-//     start: "bottom bottom",
-//     onEnterBack: () => goToSection(i)
-//   });
-// });
 
 /*===== nav */
 $(window).on('scroll', () => {
@@ -73,7 +44,7 @@ let num = 0;
 const imgs = () => {
   for(let i =1; i <= 2; i++) {
     num += i;
-    if(num<= 80){
+    if(num<= 90){
       $('.mainGrid .mainGrid_item').eq(0).children().attr({src : `./assets/images/p_${num}.jpg`});
       $('.mainGrid .mainGrid_item').eq(1).children().attr({src : `./assets/images/p_${num+2}.jpg`});
       $('.mainGrid .mainGrid_item').eq(2).children().attr({src : `./assets/images/p_${num+4}.jpg`});
