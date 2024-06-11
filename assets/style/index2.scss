@@ -128,7 +128,7 @@ $animation: 55s;
       left: 50%;
       transform: translate(-50%, -50%);
       .textWrapper {
-        transition: 0.5s;
+        transition: 0.3s;
         margin-bottom: 40px;
         .title {
           @include enTitle(40px, 800, $mainTextColor);
@@ -164,7 +164,7 @@ $animation: 55s;
         top: 0%;
         left: 0%;
         transform: rotate(0deg);
-        transition: 0.5s;
+        transition: 0.3s;
         .imgWrapper {
           padding: 25px;
           width: 100%;
@@ -258,15 +258,19 @@ $animation: 55s;
     .productList {
       .card {
         &:nth-child(1) {
+          opacity: 1;
           transform: translate(0) rotate(0);
         }
         &:nth-child(2) {
+          opacity: 1;
           transform: translate(0) rotate(0);
         }
         &:nth-child(3) {
+          opacity: 1;
           transform: translate(0) rotate(0);
         }
         &:nth-child(4) {
+          opacity: 1;
           transform: translate(0) rotate(0);
         }
       }
@@ -277,7 +281,7 @@ $animation: 55s;
   text-align: center;
   overflow: hidden;
   .mainTextWrapper {
-    transition: 0.3s;
+    transition: 0.5s;
     transform: translateY(-300px);
     opacity: 0;
     margin-bottom: 40px;
@@ -313,15 +317,19 @@ $animation: 55s;
     .card {
       transition: 0.5s;
       &:nth-child(1) {
+        opacity: 0;
         transform:  translate(-550px, -800px) rotate(28deg);
       }
       &:nth-child(2) {
+        opacity: 0;
         transform:  translate(120px, -800px) rotate(-29deg);
       }
       &:nth-child(3) {
+        opacity: 0;
         transform:  translate(60px, -800px) rotate(11deg);
       }
       &:nth-child(4) {
+        opacity: 0;
         transform:  translate(90px, -900px) rotate(-11deg);
       }
       max-width: 250px;

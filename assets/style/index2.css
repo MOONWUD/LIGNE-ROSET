@@ -60,7 +60,7 @@
   transform: translate(-50%, -50%);
 }
 .philosophy .centerItem .textWrapper {
-  transition: 0.5s;
+  transition: 0.3s;
   margin-bottom: 40px;
 }
 .philosophy .centerItem .textWrapper .title {
@@ -110,7 +110,7 @@
   top: 0%;
   left: 0%;
   transform: rotate(0deg);
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .philosophy .productList .card .imgWrapper {
   padding: 25px;
@@ -209,19 +209,23 @@
   opacity: 1;
 }
 .michelDucaroy.show .productList .card:nth-child(1) {
+  opacity: 1;
   transform: translate(0) rotate(0);
 }
 .michelDucaroy.show .productList .card:nth-child(2) {
+  opacity: 1;
   transform: translate(0) rotate(0);
 }
 .michelDucaroy.show .productList .card:nth-child(3) {
+  opacity: 1;
   transform: translate(0) rotate(0);
 }
 .michelDucaroy.show .productList .card:nth-child(4) {
+  opacity: 1;
   transform: translate(0) rotate(0);
 }
 .michelDucaroy .mainTextWrapper {
-  transition: 0.3s;
+  transition: 0.5s;
   transform: translateY(-300px);
   opacity: 0;
   margin-bottom: 40px;
@@ -281,15 +285,19 @@
   border-radius: 25px;
 }
 .michelDucaroy .productList .card:nth-child(1) {
+  opacity: 0;
   transform: translate(-550px, -800px) rotate(28deg);
 }
 .michelDucaroy .productList .card:nth-child(2) {
+  opacity: 0;
   transform: translate(120px, -800px) rotate(-29deg);
 }
 .michelDucaroy .productList .card:nth-child(3) {
+  opacity: 0;
   transform: translate(60px, -800px) rotate(11deg);
 }
 .michelDucaroy .productList .card:nth-child(4) {
+  opacity: 0;
   transform: translate(90px, -900px) rotate(-11deg);
 }
 .michelDucaroy .productList .card .imgWrapper {

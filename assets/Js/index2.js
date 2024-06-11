@@ -1,5 +1,6 @@
+
 $(window).on('scroll', () => {
-  let michelDucaroytHt = $('.michelDucaroy').offset().top -500;
+  let michelDucaroytHt = $('.michelDucaroy').offset().top - 450;
   if (scrollY > michelDucaroytHt) {
     $('.philosophy').addClass('show');
     $('.michelDucaroy').addClass('show');
@@ -10,7 +11,7 @@ $(window).on('scroll', () => {
   }
 })
 $(window).on('scroll', () => {
-  let philosophytHt = $('.philosophy').offset().top + 10;
+  let philosophytHt = $('.philosophy').offset().top + 350;
   if (scrollY > philosophytHt) {
     $('.philosophy').addClass('show');
 
