@@ -31,7 +31,7 @@ let sections = gsap.utils.toArray(".box");
 function goToSection(i) {
   gsap.to(window, {
     scrollTo: { y: i * innerHeight, autoKill: false, ease: "easeInOut" },
-    duration: 0.85
+    duration: 0.8
   });
 }
 
@@ -55,6 +55,29 @@ sections.forEach((eachPanel, i) => {
 });
 
 
+/*===== header */
+$(window).on('scroll', () => {
+  const box1 = $('.box').eq(1).offset().top - 100;
+  const box2 = $('.box').eq(5).offset().top - 100;
+  const box3 = $('.box').eq(6).offset().top - 100;
+  if (scrollY > box1) {
+    $('header').addClass('active');
+    if (scrollY >= box2) {
+      $('header a .logo img ').attr({ src: "./assets/images/logo_w.png" })
+      $('header .rightContents').addClass('show');
+    } else {
+      $('header a .logo img ').attr({ src: "./assets/images/logo_b.png" })
+      $('header .rightContents').removeClass('show');
+    }
+    if (scrollY >= box3) {
+      $('header .rightContents').removeClass('show');
+      $('header a .logo img ').attr({ src: "./assets/images/logo_b.png" })
+    }
+  } else {
+    $('header').removeClass('active');
+  }
+});
+
 
 /*===== nav */
 $(window).on('scroll', () => {
@@ -66,43 +89,43 @@ $('.navWrapper li').on('click', (e) => {
   const idx = $(e.currentTarget).index();
   const currentBox = $(window).height() * idx;
 
-  $('html, body').stop().animate({ scrollTop: currentBox }, 800, 'easeInOutCirc')
+  $('html, body').stop().animate({ scrollTop: currentBox }, 800, 'easeInOut')
 });
 
 /*===== main */
 let num = 0;
 const imgs = () => {
-  for(let i =1; i <= 2; i++) {
+  for (let i = 1; i <= 2; i++) {
     num += i;
-    if(num<= 90){
-      $('.mainGrid .mainGrid_item').eq(0).children().attr({src : `./assets/images/p_${num}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(1).children().attr({src : `./assets/images/p_${num+2}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(2).children().attr({src : `./assets/images/p_${num+4}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(3).children().attr({src : `./assets/images/p_${num+3}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(4).children().attr({src : `./assets/images/p_${num+7}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(5).children().attr({src : `./assets/images/p_${num+6}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(6).children().attr({src : `./assets/images/p_${num+5}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(7).children().attr({src : `./assets/images/p_${num+8}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(8).children().attr({src : `./assets/images/p_${num+9}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(9).children().attr({src : `./assets/images/p_${num+12}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(10).children().attr({src : `./assets/images/p_${num+11}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(11).children().attr({src : `./assets/images/p_${num+10}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(12).children().attr({src : `./assets/images/p_${num+13}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(13).children().attr({src : `./assets/images/p_${num+14}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(14).children().attr({src : `./assets/images/p_${num+18}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(15).children().attr({src : `./assets/images/p_${num+16}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(16).children().attr({src : `./assets/images/p_${num+17}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(17).children().attr({src : `./assets/images/p_${num+15}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(18).children().attr({src : `./assets/images/p_${num+19}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(19).children().attr({src : `./assets/images/p_${num+25}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(20).children().attr({src : `./assets/images/p_${num+28}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(21).children().attr({src : `./assets/images/p_${num+22}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(22).children().attr({src : `./assets/images/p_${num+23}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(23).children().attr({src : `./assets/images/p_${num+24}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(24).children().attr({src : `./assets/images/p_${num+20}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(25).children().attr({src : `./assets/images/p_${num+26}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(26).children().attr({src : `./assets/images/p_${num+27}.jpg`});
-      $('.mainGrid .mainGrid_item').eq(27).children().attr({src : `./assets/images/p_${num+21}.jpg`});
+    if (num <= 90) {
+      $('.mainGrid .mainGrid_item').eq(0).children().attr({ src: `./assets/images/p_${num}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(1).children().attr({ src: `./assets/images/p_${num + 2}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(2).children().attr({ src: `./assets/images/p_${num + 4}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(3).children().attr({ src: `./assets/images/p_${num + 3}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(4).children().attr({ src: `./assets/images/p_${num + 7}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(5).children().attr({ src: `./assets/images/p_${num + 6}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(6).children().attr({ src: `./assets/images/p_${num + 5}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(7).children().attr({ src: `./assets/images/p_${num + 8}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(8).children().attr({ src: `./assets/images/p_${num + 9}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(9).children().attr({ src: `./assets/images/p_${num + 12}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(10).children().attr({ src: `./assets/images/p_${num + 11}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(11).children().attr({ src: `./assets/images/p_${num + 10}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(12).children().attr({ src: `./assets/images/p_${num + 13}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(13).children().attr({ src: `./assets/images/p_${num + 14}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(14).children().attr({ src: `./assets/images/p_${num + 18}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(15).children().attr({ src: `./assets/images/p_${num + 16}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(16).children().attr({ src: `./assets/images/p_${num + 17}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(17).children().attr({ src: `./assets/images/p_${num + 15}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(18).children().attr({ src: `./assets/images/p_${num + 19}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(19).children().attr({ src: `./assets/images/p_${num + 25}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(20).children().attr({ src: `./assets/images/p_${num + 28}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(21).children().attr({ src: `./assets/images/p_${num + 22}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(22).children().attr({ src: `./assets/images/p_${num + 23}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(23).children().attr({ src: `./assets/images/p_${num + 24}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(24).children().attr({ src: `./assets/images/p_${num + 20}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(25).children().attr({ src: `./assets/images/p_${num + 26}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(26).children().attr({ src: `./assets/images/p_${num + 27}.jpg` });
+      $('.mainGrid .mainGrid_item').eq(27).children().attr({ src: `./assets/images/p_${num + 21}.jpg` });
     } else {
       break;
     }
