@@ -299,6 +299,50 @@ header a .logo img {
   position: relative;
   overflow: hidden;
 }
+#fullpage .philosophy.show .centerItem .textWrapper {
+  margin-top: 130vh;
+  opacity: 0.6;
+}
+#fullpage .philosophy.show .productList .card1 {
+  margin-top: 1000px;
+}
+#fullpage .philosophy.show .productList .card2 {
+  margin-top: 1000px;
+}
+#fullpage .philosophy.show .productList .card3 {
+  margin-top: 1000px;
+}
+#fullpage .philosophy.show .productList .card4 {
+  margin-top: 1000px;
+}
+#fullpage .philosophy.show .productList .card5 {
+  margin-top: -100px;
+  opacity: 0;
+}
+#fullpage .philosophy.show .productList .card6 {
+  margin-left: -100px;
+  opacity: 0;
+}
+#fullpage .philosophy.show .productList .card7 {
+  margin: -100px 0 0 -100px;
+  opacity: 0;
+}
+#fullpage .philosophy.show .productList .card8 {
+  margin: -100px 0 0 -100px;
+  opacity: 0;
+}
+#fullpage .philosophy.show .productList .card9 {
+  margin-top: -300px;
+  opacity: 0;
+}
+#fullpage .philosophy.show .productList .card10 {
+  margin-top: -400px;
+  opacity: 0;
+}
+#fullpage .philosophy.show .productList .card11 {
+  margin-top: 500px;
+  opacity: 0;
+}
 #fullpage .philosophy .centerItem {
   position: absolute;
   top: 50%;
@@ -306,6 +350,7 @@ header a .logo img {
   transform: translate(-50%, -50%);
 }
 #fullpage .philosophy .centerItem .textWrapper {
+  transition: 0.3s;
   margin-bottom: 40px;
 }
 #fullpage .philosophy .centerItem .textWrapper .title {
@@ -346,8 +391,7 @@ header a .logo img {
   color: #222222;
 }
 #fullpage .philosophy .productList .card {
-  max-width: 210px;
-  min-width: 100px;
+  width: 210px;
   border: 1px solid #222222;
   background-color: #F6F6F6;
   border-radius: 25px;
@@ -355,6 +399,7 @@ header a .logo img {
   top: 0%;
   left: 0%;
   transform: rotate(0deg);
+  transition: 0.3s;
 }
 #fullpage .philosophy .productList .card .imgWrapper {
   padding: 25px;
@@ -435,6 +480,138 @@ header a .logo img {
   top: 55%;
   left: 73%;
   transform: rotate(29deg);
+}
+#fullpage .michelDucaroy {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+#fullpage .michelDucaroy.show .mainTextWrapper {
+  transform: translateY(0);
+  opacity: 1;
+}
+#fullpage .michelDucaroy.show .btn {
+  transform: translateY(0);
+  opacity: 1;
+}
+#fullpage .michelDucaroy.show .productList .card:nth-child(1) {
+  opacity: 1;
+  transform: translate(0) rotate(0);
+}
+#fullpage .michelDucaroy.show .productList .card:nth-child(2) {
+  opacity: 1;
+  transform: translate(0) rotate(0);
+}
+#fullpage .michelDucaroy.show .productList .card:nth-child(3) {
+  opacity: 1;
+  transform: translate(0) rotate(0);
+}
+#fullpage .michelDucaroy.show .productList .card:nth-child(4) {
+  opacity: 1;
+  transform: translate(0) rotate(0);
+}
+#fullpage .michelDucaroy .mainTextWrapper {
+  transition: 0.5s;
+  transform: translateY(-300px);
+  opacity: 0;
+  margin-bottom: 40px;
+}
+#fullpage .michelDucaroy .mainTextWrapper .title {
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 40px;
+  font-weight: 800;
+  color: #222222;
+  padding: 100px 0 15px 0;
+}
+#fullpage .michelDucaroy .mainTextWrapper .text {
+  font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 18px;
+  font-weight: 400;
+  color: #222222;
+  line-height: 1.5;
+}
+#fullpage .michelDucaroy .btn {
+  margin: 0 auto 100px;
+  display: grid;
+  place-items: center;
+  transition: 0.3s;
+  transform: translateY(-300px);
+  opacity: 0;
+}
+#fullpage .michelDucaroy .btn a {
+  width: 300px;
+  height: 50px;
+  padding: 15px;
+  border-radius: 50px;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 15px;
+  font-weight: 800;
+  color: #F6F6F6;
+  background-color: #222222;
+  color: #F6F6F6;
+  display: block;
+  box-shadow: 4px 4px 4px rgba(119, 119, 119, 0.1);
+  transition: 0.3s;
+  border: 1px solid #222222;
+}
+#fullpage .michelDucaroy .btn a:hover {
+  background-color: transparent;
+  color: #222222;
+}
+#fullpage .michelDucaroy .productList {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+#fullpage .michelDucaroy .productList .card {
+  transition: 0.5s;
+  max-width: 250px;
+  min-width: 100px;
+  border: 1px solid #222222;
+  background-color: #F6F6F6;
+  border-radius: 25px;
+}
+#fullpage .michelDucaroy .productList .card:nth-child(1) {
+  opacity: 0;
+  transform: translate(-550px, -800px) rotate(28deg);
+}
+#fullpage .michelDucaroy .productList .card:nth-child(2) {
+  opacity: 0;
+  transform: translate(120px, -800px) rotate(-29deg);
+}
+#fullpage .michelDucaroy .productList .card:nth-child(3) {
+  opacity: 0;
+  transform: translate(60px, -800px) rotate(11deg);
+}
+#fullpage .michelDucaroy .productList .card:nth-child(4) {
+  opacity: 0;
+  transform: translate(90px, -900px) rotate(-11deg);
+}
+#fullpage .michelDucaroy .productList .card .imgWrapper {
+  padding: 25px;
+  width: 100%;
+  border-bottom: 1px solid #222222;
+}
+#fullpage .michelDucaroy .productList .card .imgWrapper img {
+  width: 100%;
+}
+#fullpage .michelDucaroy .productList .card .textWrapper {
+  padding: 25px;
+  text-align: left;
+  margin: 0;
+}
+#fullpage .michelDucaroy .productList .card .textWrapper .textWrapper {
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 13px;
+  font-weight: 800;
+  color: #222222;
+}
+#fullpage .michelDucaroy .productList .card .textWrapper .productName {
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 13px;
+  font-weight: 300;
+  color: #222222;
 }
 #fullpage .ourDesigners {
   width: 100%;
