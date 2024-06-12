@@ -106,13 +106,16 @@ nav {
 /*=== header logo*/
 header {
   transition: $transition;
+
   &.active {
     height: 80px;
     background-color: transparent;
+
     .rightContents {
       transform: translateY(0);
     }
   }
+
   &.show {
     .rightContents {
       a {
@@ -120,6 +123,7 @@ header {
       }
     }
   }
+
   position: fixed;
   z-index: 99999;
   width: 100%;
@@ -131,23 +135,27 @@ header {
   align-items: center;
   padding: 0 30px;
   justify-content: space-between;
+
   a {
     .logo {
       width: 150px;
+
       img {
         width: 100%;
       }
     }
   }
 
-  .rightContents{
+  .rightContents {
     transition: $transition;
     transform: translateY(-200px);
+
     img {
-      height: 18px;
-      margin-right: 8px;
+      height: 15px;
+      margin-right: 5px;
       vertical-align: middle;
     }
+
     a {
       @include koText(15px, 300);
       color: $mainColorB;
@@ -162,6 +170,7 @@ header {
 
   /*===== main */
   .main {
+    position: relative;
     background-color: $bgColor;
     width: 100%;
     height: 100%;
@@ -191,16 +200,6 @@ header {
       }
 
       .bgContents {
-        background-color: #ddd;
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-row: 2 / 4;
-        grid-column: 4 / 6;
-        border: 3px solid $bgColor;
-        border-radius: 25px;
-      }
-      .mainGrid_contents {
         width: 100%;
         height: 100%;
         display: grid;
@@ -215,10 +214,72 @@ header {
         .contentsTop {
           padding: 2vw 2vw 0 2vw;
           border-bottom: 4px solid $bgColor;
+          display: grid;
+          place-items: center;
 
-          .subTitle {
-            @include enTitle(25px, 800, $mainTextColor);
+          .logo {
+            width: 100%;
+
+            img {
+              width: 100%;
+
+            }
           }
+        }
+
+        .contentsBottom {
+          padding: 2vw;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 1vw;
+          @include enTitle(20px, 800, $mainTextColor);
+
+          li {
+            a {
+              position: relative;
+
+              &::after {
+                content: "";
+                width: 0%;
+                height: 2px;
+                background-color: #222222;
+                position: absolute;
+                bottom: -3px;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: 0.2s;
+              }
+            }
+
+            a:hover {
+              &::after {
+                content: "";
+                width: 110%;
+              }
+            }
+          }
+        }
+      }
+
+      .motionLogo {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-row: 2 / 4;
+        grid-column: 4 / 6;
+        text-align: center;
+        border: 3px solid $bgColor;
+        border-radius: 25px;
+        background-color: $mainColorW;
+        z-index: 9999;
+
+        .contentsTop {
+          padding: 2vw 2vw 0 2vw;
+          border-bottom: 4px solid $bgColor;
+          display: grid;
+          place-items: center;
 
           .logo {
             width: 100%;
@@ -265,6 +326,30 @@ header {
         }
       }
     }
+
+    .bgBlack {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: $bgColor;
+      opacity: 0;
+      z-index: 999;
+      transition: $transition;
+      animation: bgBlack 1s 20s forwards;
+
+      @keyframes bgBlack {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 0.6;
+        }
+      }
+    }
   }
 
 
@@ -277,20 +362,45 @@ header {
     display: grid;
     place-items: center;
     overflow: hidden;
+
     .contents {
       .title {
         @include enTitle(40px, 800, $mainTextColor);
         margin-bottom: 50px;
-        transform: translateY(-300px) scale(1.5);
-        color: #ddd;
+        transform: translateY(-300px);
+        opacity: 0.5;
+        img {
+          width: 300px;
+        }
       }
-
+      .subTitle {
+        @include enTitle(20px, 800, $mainTextColor);
+        margin-bottom: 15px;
+      }
       .text {
         @include koText(18px, 400);
         margin-bottom: 150px;
       }
 
       .togoImg {
+          .md img, .sm img {
+            &:hover {
+              @keyframes togo {
+                0% {
+                  transform: rotate(5deg);
+                }
+                50% {
+                  transform: rotate(0deg);
+                }
+                100% {
+                  transform: rotate(5deg);
+                }
+              }
+              animation: togo 0.5s infinite;
+              transition: 0.5s;
+            }
+          }
+        
         display: flex;
         gap: 100px;
         align-items: center;
@@ -323,10 +433,10 @@ header {
     height: 100%;
     text-align: center;
     display: grid;
-    grid-template-rows: 1fr 1fr 3fr;
+    grid-template-rows: 1fr 1fr 2fr;
 
     .textWrapper {
-      margin-bottom: 80px;
+      margin-bottom: 50px;
 
       .title {
         @include enTitle(40px, 800, $mainTextColor);
@@ -343,7 +453,7 @@ header {
       justify-content: center;
       display: flex;
       gap: 40px;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
 
       li {
         width: 80px;
@@ -391,9 +501,9 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 40px;
-        width: calc(230px * 20);
-
+        gap: 30px;
+        width: calc(190px * 20);
+        height: 50%;
         &.left {
           @keyframes left {
             0% {
@@ -401,7 +511,7 @@ header {
             }
 
             100% {
-              transform: translateX(calc(-230px * 10))
+              transform: translateX(calc(-190px * 10))
             }
           }
 
@@ -411,7 +521,7 @@ header {
         &.right {
           @keyframes right {
             0% {
-              transform: translateX(calc(-230px * 10))
+              transform: translateX(calc(-190px * 10))
             }
 
             100% {
@@ -441,7 +551,11 @@ header {
     &.show {
       .centerItem {
         .textWrapper {
-          margin-top: 130vh;
+          margin-top: 50vh;
+          opacity: 0;
+        }
+
+        .btn {
           opacity: 0;
         }
       }
@@ -536,7 +650,7 @@ header {
 
         &:hover {
           a {
-            background-color: transparent;
+            background-color: #fff;
             color: $mainTextColor;
           }
         }
@@ -545,6 +659,9 @@ header {
 
     .productList {
       .card {
+        &:hover {
+          transform: scale(1.1);
+        }
         max-width: 250px;
         min-width: 150px;
         border: 1px solid $mainTextColor;
@@ -553,7 +670,7 @@ header {
         position: absolute;
         top: 0%;
         left: 0%;
-        transform: rotate(0deg);
+        transform: rotate(0deg) scale(1);
         transition: $transition;
 
         .imgWrapper {
@@ -571,13 +688,14 @@ header {
           text-align: left;
           margin: 0;
 
-          .textWrapper {
-            @include enTitle(13px, 800, $mainTextColor)
+          .category {
+            @include koText(13px, 800)
           }
 
           .productName {
-            @include enTitle(13px, 300, $mainTextColor)
+            @include koText(13px, 500)
           }
+
         }
       }
 
@@ -630,20 +748,20 @@ header {
       }
 
       .card9 {
-        top: 20%;
+        top: 15%;
         left: 85%;
         transform: rotate(19deg);
       }
 
       .card10 {
-        top: 40%;
-        left: 90%;
+        top: 52%;
+        left: 85%;
         transform: rotate(-18deg);
       }
 
       .card11 {
         top: 55%;
-        left: 73%;
+        left: 70%;
         transform: rotate(29deg);
       }
     }
@@ -654,6 +772,7 @@ header {
   .michelDucaroy {
     display: grid;
     align-content: center;
+
     &.show {
       .mainTextWrapper {
         transform: translateY(0);
@@ -667,24 +786,65 @@ header {
 
       .productList {
         .card {
+          overflow: hidden;
           &:nth-child(1) {
             opacity: 1;
             transform: translate(0) rotate(0);
+            &:hover {
+              .imgWrapper {
+                padding: 20px;
+                overflow: hidden;
+                img {
+                  transition: $transition;
+                  transform: scale(1.2);
+                }
+              }
+            }
           }
 
           &:nth-child(2) {
             opacity: 1;
             transform: translate(0) rotate(0);
+            &:hover {
+              .imgWrapper {
+                padding: 20px;
+                overflow: hidden;
+                img {
+                  transition: $transition;
+                  transform: scale(1.2);
+                }
+              }
+            }
           }
 
           &:nth-child(3) {
             opacity: 1;
             transform: translate(0) rotate(0);
+            &:hover {
+              .imgWrapper {
+                padding: 20px;
+                overflow: hidden;
+                img {
+                  transition: $transition;
+                  transform: scale(1.2);
+                }
+              }
+            }
           }
 
           &:nth-child(4) {
             opacity: 1;
             transform: translate(0) rotate(0);
+            &:hover {
+              .imgWrapper {
+                padding: 20px;
+                overflow: hidden;
+                img {
+                  transition: $transition;
+                  transform: scale(1.2);
+                }
+              }
+            }
           }
         }
       }
@@ -727,7 +887,7 @@ header {
 
       a {
         &:hover {
-          background-color: transparent;
+          background-color: #fff;
           color: $mainTextColor;
         }
       }
@@ -739,8 +899,6 @@ header {
       gap: 25px;
 
       .card {
-        transition: $transition;
-
         &:nth-child(1) {
           opacity: 0;
           transform: translate(-550px, -800px) rotate(28deg);
@@ -750,17 +908,17 @@ header {
           opacity: 0;
           transform: translate(120px, -800px) rotate(-29deg);
         }
-
+        
         &:nth-child(3) {
           opacity: 0;
-          transform: translate(60px, -800px) rotate(11deg);
+          transform: translate(60px, -800px) rotate(11deg) scale(1);
         }
-
+        
         &:nth-child(4) {
           opacity: 0;
           transform: translate(90px, -900px) rotate(-11deg);
         }
-
+        transition: $transition;
         max-width: 280px;
         min-width: 100px;
         border: 1px solid $mainTextColor;
@@ -782,12 +940,12 @@ header {
           text-align: left;
           margin: 0;
 
-          .textWrapper {
-            @include enTitle(13px, 800, $mainTextColor)
+          .category {
+            @include koText(13px, 800)
           }
 
           .productName {
-            @include enTitle(13px, 300, $mainTextColor)
+            @include koText(13px, 500)
           }
         }
       }
@@ -833,7 +991,7 @@ header {
 
         &:hover {
           a {
-            background-color: transparent;
+            background-color: #fff;
             color: $mainTextColor;
           }
         }
@@ -909,8 +1067,14 @@ header {
     background-color: $bgColor;
 
     .title {
-      @include enTitle(50px, 800, $mainTextColor);
-      margin-bottom: 20px;
+      .text {
+        @include enTitle(50px, 800, $mainTextColor);
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100px;
+      } 
     }
 
     .text {
@@ -967,5 +1131,6 @@ header {
       }
     }
   }
+
 
 }

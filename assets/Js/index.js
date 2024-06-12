@@ -31,7 +31,7 @@ let sections = gsap.utils.toArray(".box");
 function goToSection(i) {
   gsap.to(window, {
     scrollTo: { y: i * innerHeight, autoKill: false, ease: "easeInOut" },
-    duration: 0.8
+    duration: 0.9,
   });
 }
 
@@ -95,8 +95,8 @@ $('.navWrapper li').on('click', (e) => {
   $('html, body').stop().animate({ scrollTop: currentBox }, 800, 'easeInOut')
 });
 
+
 /*===== main */
-/*=== img */
 /*=== img */
 let num = 0;
 const imgs = () => {
@@ -136,11 +136,10 @@ const imgs = () => {
     }
   }
 };
-
 setInterval(imgs, 2000);
 
 /*=== box */
-gsap.to(".main .mainGrid .mainGrid_contents", {
+gsap.to(".main .mainGrid .motionLogo .contentsTop .logo img", {
   scrollTrigger: {
     trigger: '.main',//객체기준범위
     start: "0% 0%",//시작 지점
@@ -150,9 +149,9 @@ gsap.to(".main .mainGrid .mainGrid_contents", {
      // markers: true,개발가이드선
   },
   y: 300,
-  scale: 0.3,
+  scale: 1.2,
   duration: 0.5,
-  opacity: 0,
+  opacity: 0.8,
 });
 
 
@@ -161,24 +160,25 @@ gsap.to(".main .mainGrid .mainGrid_contents", {
 gsap.to(".togo .contents .title", {
   scrollTrigger: {
     trigger: '.togo',//객체기준범위
-    start: "-10% 0%",//시작 지점
-    end: "90% 100%",//끝 지점
+    start: "0% 0%",//시작 지점
+    end: "100% 100%",//끝 지점
     // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
     scrub: 1,//부드러운 스크러빙
-    //markers: true,  개발가이드선
+   // markers: true,  개발가이드선
   },
   y: 0,
-  scale: 1,
-  duration: 0.5,
-  // opacity: 1,
-  color: "#333",
+  scale: 1.4,
+  duration: 0.4,
+  opacity: 1,
 });
+
+
 /*===== philosophy -> michelDucaroy */
 $(window).on('scroll', () => {
   let michelDucaroytHt = $('.michelDucaroy').offset().top - 450;
   if (scrollY > michelDucaroytHt) {
     $('.michelDucaroy').addClass('show');
-
+    
   } else {
     $('.michelDucaroy').removeClass('show');
   }
@@ -187,8 +187,99 @@ $(window).on('scroll', () => {
   let philosophytHt = $('.philosophy').offset().top + 350;
   if (scrollY > philosophytHt) {
     $('.philosophy').addClass('show');
-
+    
   } else {
     $('.philosophy').removeClass('show');
   }
 })
+
+
+/*===== footer */
+/*=== title */
+
+// class TextScramble {
+//   constructor(el) {
+//     this.el = el
+//     this.chars = `$@&%*(@&()*_________`
+//     this.update = this.update.bind(this)
+//   }
+//   setText(newText) {
+//     const oldText = this.el.innerText
+//     const length = Math.max(oldText.length, newText.length)
+//     const promise = new Promise((resolve) => this.resolve = resolve)
+//     this.queue = []
+//     for (let i = 0; i < length; i++) {
+//       const from = oldText[i] || ''
+//       const to = newText[i] || ''
+//       const start = Math.floor(Math.random() * 40)
+//       const end = start + Math.floor(Math.random() * 40)
+//       this.queue.push({ from, to, start, end })
+//     }
+//     cancelAnimationFrame(this.frameRequest)
+//     this.frame = 0
+//     this.update()
+//     return promise
+//   }
+//   update() {
+//     let output = ''
+//     let complete = 0
+//     for (let i = 0, n = this.queue.length; i < n; i++) {
+//       let { from, to, start, end, char } = this.queue[i]
+//       if (this.frame >= end) {
+//         complete++
+//         output += to
+//       } else if (this.frame >= start) {
+//         if (!char || Math.random() < 0.28) {
+//           char = this.randomChar()
+//           this.queue[i].char = char
+//         }
+//         output += `<span class="dud">${char}</span>`
+//       } else {
+//         output += from
+//       }
+//     }
+//     this.el.innerHTML = output
+//     if (complete === this.queue.length) {
+//       this.resolve()
+//     } else {
+//       this.frameRequest = requestAnimationFrame(this.update)
+//       this.frame++
+//     }
+//   }
+//   randomChar() {
+//     return this.chars[Math.floor(Math.random() * this.chars.length)]
+//   }
+// }
+
+// const phrases = [
+//   'Ligne Roset',
+//   'french furniture manufacturer',
+// ]
+
+// const el = document.querySelector('.footer .title')
+// const fx = new TextScramble(el)
+
+// let counter = 0
+// const next = () => {
+//   fx.setText(phrases[counter]).then(() => {
+//     setTimeout(next, 2500)
+//   })
+//   counter = (counter + 1) % phrases.length
+// }
+
+// next()
+
+
+const content = "LIGNE ROSET";
+const text = document.querySelector(".footer .title .text");
+let i = 0;
+
+function typing(){
+    let txt = content[i++];
+    text.innerHTML += txt;
+    if (i > content.length) {
+        text.textContent = "";
+        i = 0;
+    }
+}
+setInterval(typing, 300)

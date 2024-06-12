@@ -73,8 +73,8 @@ header .rightContents {
   transform: translateY(-200px);
 }
 header .rightContents img {
-  height: 18px;
-  margin-right: 8px;
+  height: 15px;
+  margin-right: 5px;
   vertical-align: middle;
 }
 header .rightContents a {
@@ -98,6 +98,7 @@ header .rightContents a {
   /*===== footer */
 }
 #fullpage .main {
+  position: relative;
   background-color: #dddddd;
   width: 100%;
   height: 100%;
@@ -125,16 +126,6 @@ header .rightContents a {
   width: 80%;
 }
 #fullpage .main .mainGrid .bgContents {
-  background-color: #ddd;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-row: 2/4;
-  grid-column: 4/6;
-  border: 3px solid #dddddd;
-  border-radius: 25px;
-}
-#fullpage .main .mainGrid .mainGrid_contents {
   width: 100%;
   height: 100%;
   display: grid;
@@ -146,23 +137,19 @@ header .rightContents a {
   border-radius: 25px;
   background-color: #F6F6F6;
 }
-#fullpage .main .mainGrid .mainGrid_contents .contentsTop {
+#fullpage .main .mainGrid .bgContents .contentsTop {
   padding: 2vw 2vw 0 2vw;
   border-bottom: 4px solid #dddddd;
+  display: grid;
+  place-items: center;
 }
-#fullpage .main .mainGrid .mainGrid_contents .contentsTop .subTitle {
-  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
-  font-size: 25px;
-  font-weight: 800;
-  color: #222222;
-}
-#fullpage .main .mainGrid .mainGrid_contents .contentsTop .logo {
+#fullpage .main .mainGrid .bgContents .contentsTop .logo {
   width: 100%;
 }
-#fullpage .main .mainGrid .mainGrid_contents .contentsTop .logo img {
+#fullpage .main .mainGrid .bgContents .contentsTop .logo img {
   width: 100%;
 }
-#fullpage .main .mainGrid .mainGrid_contents .contentsBottom {
+#fullpage .main .mainGrid .bgContents .contentsBottom {
   padding: 2vw;
   display: flex;
   flex-direction: column;
@@ -173,10 +160,10 @@ header .rightContents a {
   font-weight: 800;
   color: #222222;
 }
-#fullpage .main .mainGrid .mainGrid_contents .contentsBottom li a {
+#fullpage .main .mainGrid .bgContents .contentsBottom li a {
   position: relative;
 }
-#fullpage .main .mainGrid .mainGrid_contents .contentsBottom li a::after {
+#fullpage .main .mainGrid .bgContents .contentsBottom li a::after {
   content: "";
   width: 0%;
   height: 2px;
@@ -187,9 +174,84 @@ header .rightContents a {
   transform: translateX(-50%);
   transition: 0.2s;
 }
-#fullpage .main .mainGrid .mainGrid_contents .contentsBottom li a:hover::after {
+#fullpage .main .mainGrid .bgContents .contentsBottom li a:hover::after {
   content: "";
   width: 110%;
+}
+#fullpage .main .mainGrid .motionLogo {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-row: 2/4;
+  grid-column: 4/6;
+  text-align: center;
+  border: 3px solid #dddddd;
+  border-radius: 25px;
+  background-color: #F6F6F6;
+  z-index: 9999;
+}
+#fullpage .main .mainGrid .motionLogo .contentsTop {
+  padding: 2vw 2vw 0 2vw;
+  border-bottom: 4px solid #dddddd;
+  display: grid;
+  place-items: center;
+}
+#fullpage .main .mainGrid .motionLogo .contentsTop .logo {
+  width: 100%;
+}
+#fullpage .main .mainGrid .motionLogo .contentsTop .logo img {
+  width: 100%;
+}
+#fullpage .main .mainGrid .motionLogo .contentsBottom {
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1vw;
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 20px;
+  font-weight: 800;
+  color: #222222;
+}
+#fullpage .main .mainGrid .motionLogo .contentsBottom li a {
+  position: relative;
+}
+#fullpage .main .mainGrid .motionLogo .contentsBottom li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #222222;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.2s;
+}
+#fullpage .main .mainGrid .motionLogo .contentsBottom li a:hover::after {
+  content: "";
+  width: 110%;
+}
+#fullpage .main .bgBlack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #dddddd;
+  opacity: 0;
+  z-index: 999;
+  transition: 0.7s;
+  animation: bgBlack 1s 20s forwards;
+}
+@keyframes bgBlack {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.6;
+  }
 }
 #fullpage .togo {
   text-align: center;
@@ -206,8 +268,18 @@ header .rightContents a {
   font-weight: 800;
   color: #222222;
   margin-bottom: 50px;
-  transform: translateY(-300px) scale(1.5);
-  color: #ddd;
+  transform: translateY(-300px);
+  opacity: 0.5;
+}
+#fullpage .togo .contents .title img {
+  width: 300px;
+}
+#fullpage .togo .contents .subTitle {
+  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-size: 20px;
+  font-weight: 800;
+  color: #222222;
+  margin-bottom: 15px;
 }
 #fullpage .togo .contents .text {
   font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
@@ -221,6 +293,21 @@ header .rightContents a {
   display: flex;
   gap: 100px;
   align-items: center;
+}
+#fullpage .togo .contents .togoImg .md img:hover, #fullpage .togo .contents .togoImg .sm img:hover {
+  animation: togo 0.5s infinite;
+  transition: 0.5s;
+}
+@keyframes togo {
+  0% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
 }
 #fullpage .togo .contents .togoImg .md {
   max-width: 250px;
@@ -241,10 +328,10 @@ header .rightContents a {
   height: 100%;
   text-align: center;
   display: grid;
-  grid-template-rows: 1fr 1fr 3fr;
+  grid-template-rows: 1fr 1fr 2fr;
 }
 #fullpage .products .textWrapper {
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 #fullpage .products .textWrapper .title {
   font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
@@ -264,7 +351,7 @@ header .rightContents a {
   justify-content: center;
   display: flex;
   gap: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 #fullpage .products .productCategory li {
   width: 80px;
@@ -308,8 +395,9 @@ header .rightContents a {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  width: 4600px;
+  gap: 30px;
+  width: 3800px;
+  height: 50%;
 }
 #fullpage .products .slideContainer .slide.left {
   animation: left 55s linear infinite;
@@ -319,7 +407,7 @@ header .rightContents a {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-2300px);
+    transform: translateX(-1900px);
   }
 }
 #fullpage .products .slideContainer .slide.right {
@@ -327,7 +415,7 @@ header .rightContents a {
 }
 @keyframes right {
   0% {
-    transform: translateX(-2300px);
+    transform: translateX(-1900px);
   }
   100% {
     transform: translateX(0);
@@ -349,7 +437,10 @@ header .rightContents a {
   overflow: hidden;
 }
 #fullpage .philosophy.show .centerItem .textWrapper {
-  margin-top: 130vh;
+  margin-top: 50vh;
+  opacity: 0;
+}
+#fullpage .philosophy.show .centerItem .btn {
   opacity: 0;
 }
 #fullpage .philosophy.show .productList .card1 {
@@ -436,7 +527,7 @@ header .rightContents a {
   border: 1px solid #222222;
 }
 #fullpage .philosophy .centerItem .btn:hover a {
-  background-color: transparent;
+  background-color: #fff;
   color: #222222;
 }
 #fullpage .philosophy .productList .card {
@@ -448,8 +539,11 @@ header .rightContents a {
   position: absolute;
   top: 0%;
   left: 0%;
-  transform: rotate(0deg);
+  transform: rotate(0deg) scale(1);
   transition: 0.7s;
+}
+#fullpage .philosophy .productList .card:hover {
+  transform: scale(1.1);
 }
 #fullpage .philosophy .productList .card .imgWrapper {
   padding: 25px;
@@ -464,17 +558,19 @@ header .rightContents a {
   text-align: left;
   margin: 0;
 }
-#fullpage .philosophy .productList .card .textWrapper .textWrapper {
-  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+#fullpage .philosophy .productList .card .textWrapper .category {
+  font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 13px;
   font-weight: 800;
   color: #222222;
+  line-height: 1.5;
 }
 #fullpage .philosophy .productList .card .textWrapper .productName {
-  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 500;
   color: #222222;
+  line-height: 1.5;
 }
 #fullpage .philosophy .productList .card1 {
   top: 60%;
@@ -517,18 +613,18 @@ header .rightContents a {
   transform: rotate(-48deg);
 }
 #fullpage .philosophy .productList .card9 {
-  top: 20%;
+  top: 15%;
   left: 85%;
   transform: rotate(19deg);
 }
 #fullpage .philosophy .productList .card10 {
-  top: 40%;
-  left: 90%;
+  top: 52%;
+  left: 85%;
   transform: rotate(-18deg);
 }
 #fullpage .philosophy .productList .card11 {
   top: 55%;
-  left: 73%;
+  left: 70%;
   transform: rotate(29deg);
 }
 #fullpage .michelDucaroy {
@@ -547,21 +643,56 @@ header .rightContents a {
   transform: translateY(0);
   opacity: 1;
 }
+#fullpage .michelDucaroy.show .productList .card {
+  overflow: hidden;
+}
 #fullpage .michelDucaroy.show .productList .card:nth-child(1) {
   opacity: 1;
   transform: translate(0) rotate(0);
+}
+#fullpage .michelDucaroy.show .productList .card:nth-child(1):hover .imgWrapper {
+  padding: 20px;
+  overflow: hidden;
+}
+#fullpage .michelDucaroy.show .productList .card:nth-child(1):hover .imgWrapper img {
+  transition: 0.7s;
+  transform: scale(1.2);
 }
 #fullpage .michelDucaroy.show .productList .card:nth-child(2) {
   opacity: 1;
   transform: translate(0) rotate(0);
 }
+#fullpage .michelDucaroy.show .productList .card:nth-child(2):hover .imgWrapper {
+  padding: 20px;
+  overflow: hidden;
+}
+#fullpage .michelDucaroy.show .productList .card:nth-child(2):hover .imgWrapper img {
+  transition: 0.7s;
+  transform: scale(1.2);
+}
 #fullpage .michelDucaroy.show .productList .card:nth-child(3) {
   opacity: 1;
   transform: translate(0) rotate(0);
 }
+#fullpage .michelDucaroy.show .productList .card:nth-child(3):hover .imgWrapper {
+  padding: 20px;
+  overflow: hidden;
+}
+#fullpage .michelDucaroy.show .productList .card:nth-child(3):hover .imgWrapper img {
+  transition: 0.7s;
+  transform: scale(1.2);
+}
 #fullpage .michelDucaroy.show .productList .card:nth-child(4) {
   opacity: 1;
   transform: translate(0) rotate(0);
+}
+#fullpage .michelDucaroy.show .productList .card:nth-child(4):hover .imgWrapper {
+  padding: 20px;
+  overflow: hidden;
+}
+#fullpage .michelDucaroy.show .productList .card:nth-child(4):hover .imgWrapper img {
+  transition: 0.7s;
+  transform: scale(1.2);
 }
 #fullpage .michelDucaroy .mainTextWrapper {
   transition: 0.5s;
@@ -608,7 +739,7 @@ header .rightContents a {
   border: 1px solid #222222;
 }
 #fullpage .michelDucaroy .btn a:hover {
-  background-color: transparent;
+  background-color: #fff;
   color: #222222;
 }
 #fullpage .michelDucaroy .productList {
@@ -634,7 +765,7 @@ header .rightContents a {
 }
 #fullpage .michelDucaroy .productList .card:nth-child(3) {
   opacity: 0;
-  transform: translate(60px, -800px) rotate(11deg);
+  transform: translate(60px, -800px) rotate(11deg) scale(1);
 }
 #fullpage .michelDucaroy .productList .card:nth-child(4) {
   opacity: 0;
@@ -653,17 +784,19 @@ header .rightContents a {
   text-align: left;
   margin: 0;
 }
-#fullpage .michelDucaroy .productList .card .textWrapper .textWrapper {
-  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+#fullpage .michelDucaroy .productList .card .textWrapper .category {
+  font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 13px;
   font-weight: 800;
   color: #222222;
+  line-height: 1.5;
 }
 #fullpage .michelDucaroy .productList .card .textWrapper .productName {
-  font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
+  font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 500;
   color: #222222;
+  line-height: 1.5;
 }
 #fullpage .ourDesigners {
   width: 100%;
@@ -716,7 +849,7 @@ header .rightContents a {
   border: 1px solid #222222;
 }
 #fullpage .ourDesigners .centerItem .btn:hover a {
-  background-color: transparent;
+  background-color: #fff;
   color: #222222;
 }
 #fullpage .ourDesigners .designersList {
@@ -772,12 +905,16 @@ header .rightContents a {
   text-align: center;
   background-color: #dddddd;
 }
-#fullpage .footer .title {
+#fullpage .footer .title .text {
   font-family: "Radio Canada Big", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
   font-size: 50px;
   font-weight: 800;
   color: #222222;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100px;
 }
 #fullpage .footer .text {
   font-family: "SUIT", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", cursive;
