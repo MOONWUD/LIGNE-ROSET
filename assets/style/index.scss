@@ -1069,15 +1069,15 @@ header {
     .title {
       .text {
         @include enTitle(50px, 800, $mainTextColor);
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        height: 100px;
+        height: 150px;
       } 
     }
 
-    .text {
+    .subText {
       @include koText(18px, 400);
       margin-bottom: 50px;
     }

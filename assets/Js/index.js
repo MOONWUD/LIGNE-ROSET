@@ -270,16 +270,16 @@ $(window).on('scroll', () => {
 // next()
 
 
-const content = "LIGNE ROSET";
-const text = document.querySelector(".footer .title .text");
-let i = 0;
+// const content = "LIGNE - ROSET";
+// const text = document.querySelector(".footer .title .text");
+// let i = 0;
 
-function typing(){
-    let txt = content[i++];
-    text.innerHTML += txt;
-    if (i > content.length) {
-        text.textContent = "";
-        i = 0;
-    }
-}
-setInterval(typing, 300)
+// function typing(){
+//     let txt = content[i++];
+//     text.innerHTML += txt;
+//     if (i > content.length) {
+//         text.textContent = "";
+//         i = 0;
+//     }
+// }
+// setInterval(typing, 300)
