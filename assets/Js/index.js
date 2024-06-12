@@ -1,4 +1,6 @@
 /*===== fullpage */
+
+/*=== fullpage JAVA */
 // $('.box').each(function () {
 //   $(this).on('wheel', (e) => {
 //     e.preventDefault();
@@ -23,6 +25,9 @@
 //     })
 //   });
 // });
+
+
+/*=== fullpage GSAP */
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -144,7 +149,6 @@ gsap.to(".main .mainGrid .motionLogo .contentsTop .logo img", {
     trigger: '.main',//객체기준범위
     start: "0% 0%",//시작 지점
     end: "200% 100%",//끝 지점
-    // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
     scrub: 1,//부드러운 스크러빙
      // markers: true,개발가이드선
   },
@@ -162,7 +166,6 @@ gsap.to(".togo .contents .title", {
     trigger: '.togo',//객체기준범위
     start: "0% 0%",//시작 지점
     end: "100% 100%",//끝 지점
-    // end: "+=500"//시작 부분부터 500px까지 스크롤 한 후종료
     scrub: 1,//부드러운 스크러빙
    // markers: true,  개발가이드선
   },
