@@ -9,8 +9,9 @@
 ## Design
   🎯 Keyword           
     # 깔끔함  # 통일감 # 담백함 # 부드러운            
-    (전체적으로 라운드를 주는 사각형으로 통일, 부드러운 이미지를 줌)         
-                 
+    - 둥근 각을 가진 사각형으로 통일, 부드러운 이미지를 줌
+    - 얇은 선을 활용해 깔금한 이미지를 줌
+    - 꾸밈 요소를 자제해 담백한 이미지를 줌
                       
   🎯 Color       
     
@@ -22,12 +23,12 @@
             
   🎯 Font   
   KO - Pretendard 프리텐다드     
-  EN - 미정 미정 ^^ 
+  EN - 미정 미정 !!!!! 
   
 ## Publishing
   - gasp ScrollTo와 ScrollTrigger를 fullpage를 구현
   - 비동기 함수 setInterval를 활용해 사진이 바꾸는 event 구현
-  - ScrollTrigger를 활용해 두 section에 연속되는 요소가 있는 것처럼 구현
+  - ScrollTrigger를 한 요소가 두 section을 이동하는 것처럼 구현 
   - scss의 @mixin과 @include를 활용해 자주 사용하는 폰트 스타일이나 버튼 스타일 저장
   - gird와 flex를 활용해 레이아웃 제작 / 제어
   - Hover를 통한 다양한 디자인 요소 적용
@@ -36,9 +37,21 @@
   - animation을 활용해 다양한 움직임 적용
     
 ## Probloem & Solution
-    
+  - jQuery로 구현한 fullpage가 부드럽게 넘어가지 않음        
+    => gsap를 활용해 부드러운 scroll 구현 (그러나 뚝딱거리는 현상 발생...! 나를 닮아 정이 감)
+                         
+  - 한 요소가 두 sention을 이동하는 event를 구현하고자 했으나 무료플러그인의 한계로 어려움을 겪음          
+    => 두 section에 같은 요소를 넣고, transfrom과 gsap ScrollTrigger를 활용해 한 요소인 것처럼 구현
+            
+  - hover 이벤트가 영역이 아닌 곳에서도 이벤트 발생
+    => a태그를 감싸고 있는 부모요소에 hover 이벤트를 주지 않고, a태그에 직접적으로 스타일과 이벤트를 줘 정확한 영역 적용
+        
+  - margin-top과 margin-bottom을 활용해 위아래 가운데 정렬을 맞췄으나 화면 크기에 따라 정렬이 무너짐                  
+    => display gird의 align-content이나 place-items의 center 값을 줘 어느 PC 사이즈에서도 가운데에 있도록 구현
+         
 ## Review 🏋️
-    
+
+           
 ### 240612_수
   - 메인에서 togo로 자연스럽게 넘어가는 이벤트 고민 !
     -> togo를 작게 수정, logo가 이어지는 느낌으로 구현 완료
