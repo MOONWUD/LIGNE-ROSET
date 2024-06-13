@@ -1,30 +1,30 @@
 /*===== fullpage */
 
 /*=== fullpage JAVA */
-// $('.box').each(function () {
-//   $(this).on('wheel', (e) => {
-//     e.preventDefault();
+$('.box').each(function () {
+  $(this).on('wheel', (e) => {
+    e.preventDefault();
 
-//     let delta = e.originalEvent.deltaY;
+    let delta = e.originalEvent.deltaY;
 
-//     const nextBox = $(this).next()[0];
-//     const prevBox = $(this).prev()[0];
-//     let currentTop = null;
-//     if (delta > 0) { // 휠 내렸을 때
-//       currentTop = nextBox ? nextBox.offsetTop : this.offsetTop;
-//     } else { // 휠 올렸을 때
-//       if (prevBox) {
-//         currentTop = prevBox.offsetTop;
-//       } else {
-//         return;
-//       }
-//     }
-//     scrollTo({
-//       top: currentTop,
-//       behavior: 'smooth'
-//     })
-//   });
-// });
+    const nextBox = $(this).next()[0];
+    const prevBox = $(this).prev()[0];
+    let currentTop = null;
+    if (delta > 0) { // 휠 내렸을 때
+      currentTop = nextBox ? nextBox.offsetTop : this.offsetTop;
+    } else { // 휠 올렸을 때
+      if (prevBox) {
+        currentTop = prevBox.offsetTop;
+      } else {
+        return;
+      }
+    }
+    scrollTo({
+      top: currentTop,
+      behavior: 'smooth'
+    })
+  });
+});
 
 
 /*=== fullpage GSAP */
@@ -41,11 +41,10 @@ function goToSection(i) {
 }
 
 ScrollTrigger.defaults({
-   //markers: true
+   // markers: true
 });
 
 sections.forEach((eachPanel, i) => {
-  // const mainAnim = gsap.timeline({ paused: true });
 
   ScrollTrigger.create({
     trigger: eachPanel,
