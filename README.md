@@ -35,6 +35,7 @@
   - 다양한 PC사이즈 대응을 위한 미디어쿼리 추가 적용
   - Transform를 활용해 다양한 변형 적용
   - animation을 활용해 다양한 움직임 적용
+  - transiton을 활용해 부드러운 움직임 적용
     
 ## Probloem & Solution
   - jQuery로 구현한 fullpage가 부드럽게 넘어가지 않음        
