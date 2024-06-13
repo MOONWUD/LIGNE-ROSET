@@ -36,17 +36,17 @@
   - transiton을 활용해 부드러운 움직임 적용
     
 ## Probloem & Solution
-  - jQuery로 구현한 fullpage가 부드럽게 넘어가지 않음        
-    => gsap를 활용해 부드러운 scroll 구현 (그러나 뚝딱거리는 현상 발생...! 나를 닮아 정이 감)
-                         
-  - 한 요소가 두 sention을 이동하는 event를 구현하고자 했으나 무료플러그인의 한계로 어려움을 겪음          
-    => 두 section에 같은 요소를 넣고, transfrom과 gsap ScrollTrigger를 활용해 한 요소인 것처럼 구현
+  - jQuery로 구현한 fullpage가 부드럽게 넘어가지 않음              
+    => gsap를 활용해 부드러운 scroll 구현 (그러나 뚝딱거리는 현상 발생...! 나를 닮아 정이 감)         
+                          
+  - 한 요소가 두 sention을 이동하는 event를 구현하고자 했으나 무료플러그인의 한계로 어려움을 겪음              
+    => 두 section에 같은 요소를 넣고, transfrom과 gsap ScrollTrigger를 활용해 한 요소인 것처럼 구현       
             
-  - hover 이벤트가 영역이 아닌 곳에서도 이벤트 발생
+  - hover 이벤트가 영역이 아닌 곳에서도 이벤트 발생             
     => a태그를 감싸고 있는 부모요소에 hover 이벤트를 주지 않고, a태그에 직접적으로 스타일과 이벤트를 줘 정확한 영역 적용
         
-  - margin-top과 margin-bottom을 활용해 위아래 가운데 정렬을 맞췄으나 화면 크기에 따라 정렬이 무너짐                  
-    => display gird의 align-content이나 place-items의 center 값을 줘 어느 PC 사이즈에서도 가운데에 있도록 구현
+  - margin-top과 margin-bottom을 활용해 위아래 가운데 정렬을 맞췄으나 화면 크기에 따라 정렬이 무너짐                                    
+    => display gird의 align-content이나 place-items의 center 값을 줘 어느 PC 사이즈에서도 가운데에 있도록 구현               
          
 ## Review 🏋️
   디자인부터 퍼블리싱까지 혼자 완성하면서 난관 봉착과 난관 해결의 연속이었다.     
