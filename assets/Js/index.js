@@ -163,11 +163,10 @@ gsap.to(".main .mainGrid .motionLogo .contentsTop .logo img", {
 /*=== box */
 gsap.to(".togo .contents .title", {
   scrollTrigger: {
-    trigger: '.togo',//객체기준범위
-    start: "0% 0%",//시작 지점
-    end: "100% 100%",//끝 지점
-    scrub: 1,//부드러운 스크러빙
-   // markers: true,  개발가이드선
+    trigger: '.togo',
+    start: "0% 0%",
+    end: "100% 100%",
+    scrub: 1,
   },
   y: 0,
   scale: 1.4,
